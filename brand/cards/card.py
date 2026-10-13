@@ -22,7 +22,7 @@ def centred(f, s, size, cy, color, tr=0):
 
 SERIF_I = font("fonts/Newsreader-Italic[opsz,wght].ttf", opsz=72, wght=500)
 
-def flower(cx, cy, R, centre=FOR, rot=0, seed=7):
+def flower(cx, cy, R, centre=YEL, rot=0, seed=7):
     d = daisy(cx, cy, R, seed=seed, stroke=INK, sw=max(3, R * .035), petal_fill=CREAM_, center=centre, veins=False, texture=False)
     return f'<g transform="rotate({rot} {cx} {cy})">' + d.replace(f'fill="{SOFT}"', f'fill="{CREAM_}"') + "</g>"
 
@@ -66,12 +66,12 @@ def front():
     b += heart(255, 585, 18, CREAM_, -15) + heart(810, 120, 20, CREAM_, 12) + heart(1060, 330, 13, INK, 18)
     lw = 470
     b += logo("daisys-logo-badge-ribbon", (W - lw) / 2, 112, lw)
-    return page(b, YEL)
+    return page(b, SAGE_)
 
 def back(p):
     x = 100; b = ""
     # yellow panel with a wavy edge on the right, holding the stamp
-    b += f'<path d="M800,0 C735,120 860,230 790,345 C725,455 845,560 785,675 H1125 V0Z" fill="{YEL}"/>'
+    b += f'<path d="M800,0 C735,120 860,230 790,345 C725,455 845,560 785,675 H1125 V0Z" fill="{SAGE_}"/>'
     for cx, cy, r in [(870, 95, 30), (1050, 625, 30), (840, 590, 16), (1075, 90, 15)]:
         b += bubble(cx, cy, r)
     b += f'<g transform="rotate(-7 925 330)">' + logo("daisys-logo-stamp", 805, 210, 240) + "</g>"
