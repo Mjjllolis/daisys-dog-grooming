@@ -22,6 +22,18 @@
 	--sage-soft: 233 235 225;
 }
 
+/* Nothing may widen the page: stops sideways swiping on phones */
+html,
+body {
+	overflow-x: hidden;
+}
+@supports (overflow: clip) {
+	html,
+	body {
+		overflow-x: clip;
+	}
+}
+
 html {
 	scroll-behavior: smooth;
 	-webkit-font-smoothing: antialiased;

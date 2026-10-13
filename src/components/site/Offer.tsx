@@ -11,13 +11,13 @@ export default function Offer() {
       <Wave fill="rgb(var(--forest))" />
       <div className="relative isolate overflow-hidden bg-forest pb-20 pt-10 text-center text-white sm:pt-14 lg:pb-0">
         <BgPhoto src={BACKDROPS.offer} tint opacity={0.2} className="inset-0" />
-        <Daisy className="absolute left-[6%] top-14 h-28 w-28 animate-float" />
-        <Daisy className="absolute left-[17%] bottom-20 h-14 w-14 animate-float [animation-delay:-2s]" />
-        <Daisy className="absolute right-[9%] bottom-24 h-20 w-20 animate-float [animation-delay:-4s]" />
-        <Paw className="absolute right-[6%] top-12 h-24 w-24 rotate-[20deg] text-white/10" />
-        <Paw className="absolute right-[14%] top-28 h-14 w-14 rotate-[35deg] text-white/10" />
+        <Daisy className="absolute left-[3%] top-4 h-14 w-14 animate-float sm:left-[6%] sm:top-14 sm:h-28 sm:w-28" />
+        <Daisy className="absolute bottom-6 left-[8%] h-10 w-10 animate-float [animation-delay:-2s] sm:bottom-20 sm:left-[17%] sm:h-14 sm:w-14" />
+        <Daisy className="absolute bottom-24 right-[9%] hidden h-20 w-20 animate-float [animation-delay:-4s] sm:block" />
+        <Paw className="absolute right-[3%] top-4 h-14 w-14 sm:right-[6%] sm:top-12 sm:h-24 sm:w-24 rotate-[20deg] text-white/10" />
+        <Paw className="absolute right-[14%] top-28 hidden h-14 w-14 rotate-[35deg] text-white/10 sm:block" />
         <Paw className="absolute bottom-10 left-[30%] h-14 w-14 -rotate-12 text-white/10" />
-        <Sparkle className="absolute left-[24%] top-24 h-9 w-9 text-accent" />
+        <Sparkle className="absolute left-[24%] top-24 hidden h-9 w-9 text-accent sm:block" />
         <div className="absolute right-[28%] top-3 hidden xl:block">
           <CircleText id="offer-badge" text="Book 24/7 ✦ book online ✦ book 24/7 ✦ " size={170} textClass="fill-sage">
             <img src="/brand/daisys-logo-stamp.svg" alt="" className="h-24 w-24 drop-shadow-lg" />
