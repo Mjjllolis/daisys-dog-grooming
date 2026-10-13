@@ -20,34 +20,74 @@ def logo(name, x, y, w):
 def centred(f, s, size, cy, color, tr=0):
     return text(f, s, size, (W - width(f, s, size, tr)) / 2, cy, color, tr)[0]
 
-def flower(cx, cy, R, op):
-    d = daisy(cx, cy, R, stroke=CREAM_, sw=R * .022, petal_fill=INK, center=INK, veins=False, texture=False)
-    return f'<g opacity="{op}">' + d.replace(f'fill="{SOFT}"', f'fill="{INK}"') + "</g>"
+SERIF_I = font("fonts/Newsreader-Italic[opsz,wght].ttf", opsz=72, wght=500)
+
+def flower(cx, cy, R, centre=FOR, rot=0, seed=7):
+    d = daisy(cx, cy, R, seed=seed, stroke=INK, sw=max(3, R * .035), petal_fill=CREAM_, center=centre, veins=False, texture=False)
+    return f'<g transform="rotate({rot} {cx} {cy})">' + d.replace(f'fill="{SOFT}"', f'fill="{CREAM_}"') + "</g>"
+
+def bubble(cx, cy, r, edge=CREAM_):
+    return (f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="#FFFFFF" fill-opacity=".28" stroke="{edge}" stroke-width="{max(2.5, r*.07):.1f}"/>'
+            f'<path d="M{cx-r*.55:.1f},{cy-r*.15:.1f} A{r*.58:.1f},{r*.58:.1f} 0 0 1 {cx-r*.1:.1f},{cy-r*.58:.1f}" fill="none" stroke="#FFFFFF" stroke-width="{max(2.5, r*.12):.1f}" stroke-linecap="round"/>')
+
+def sparkle(cx, cy, s, color):
+    return f'<path d="M{cx},{cy-s} Q{cx},{cy} {cx+s},{cy} Q{cx},{cy} {cx},{cy+s} Q{cx},{cy} {cx-s},{cy} Q{cx},{cy} {cx},{cy-s}Z" fill="{color}"/>'
+
+def heart(cx, cy, s, color, rot=0):
+    return (f'<path transform="translate({cx} {cy}) rotate({rot}) scale({s/20})" d="M0,18 C-14,8 -22,0 -22,-8 C-22,-16 -15,-21 -9,-21 C-4,-21 -1,-18 0,-15 C1,-18 4,-21 9,-21 C15,-21 22,-16 22,-8 C22,0 14,8 0,18Z" fill="{color}"/>')
+
+def trail(points, s, color, op):
+    out = ""
+    for i, (x, y, a) in enumerate(points):
+        out += f'<g transform="rotate({a} {x} {y})" opacity="{op}">' + paw(x, y, s, color) + "</g>"
+    return out
+
+def icon(kind, cx, cy):
+    st = f'fill="none" stroke="{INK}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"'
+    g = {
+      "phone": f'<rect x="-7.5" y="-12" width="15" height="24" rx="3.5" {st}/><path d="M-2.5,7.5 H2.5" {st}/>',
+      "mail": f'<rect x="-12" y="-8.5" width="24" height="17" rx="3" {st}/><path d="M-11,-7 L0,1.5 L11,-7" {st}/>',
+      "web": f'<circle r="11.5" {st}/><ellipse rx="5" ry="11.5" {st}/><path d="M-11.5,0 H11.5" {st}/>',
+      "pin": f'<path d="M0,12.5 C-5,7 -10,2 -10,-3 A10,10 0 1 1 10,-3 C10,2 5,7 0,12.5Z" {st}/><circle cy="-3" r="3.2" {st}/>',
+    }[kind]
+    return f'<circle cx="{cx}" cy="{cy}" r="23" fill="{YEL}"/><g transform="translate({cx} {cy})">{g}</g>'
 
 def page(body, bg): return f'<svg xmlns="http://www.w3.org/2000/svg" width="3.75in" height="2.25in" viewBox="0 0 {W} {H}"><rect width="{W}" height="{H}" fill="{bg}"/>{body}</svg>'
 
 def front():
-    lw = 740
-    body = flower(1050, 650, 260, .16) + flower(105, 85, 110, .12)
-    body += logo("daisys-logo-horizontal-reversed", (W - lw) / 2, 150, lw)
-    body += f'<rect x="{W/2-30}" y="482" width="60" height="5" rx="2.5" fill="{YEL}"/>'
-    body += centred(SANS, "ONE-ON-ONE DOG GROOMING  ·  ADDIS, LA", 20, 540, SAGE_, 5.5)
-    return page(body, INK)
+    b = ""
+    # paw prints wandering in from the bottom-left and out the top-right
+    b += trail([(70, 640, 40), (150, 600, 55), (195, 520, 35), (880, 140, 50), (960, 95, 35), (1010, 20, 50)], .42, INK, .16)
+    # bath bubbles
+    for cx, cy, r in [(120, 150, 46), (205, 85, 22), (80, 265, 17), (980, 520, 52), (1065, 430, 24), (880, 600, 19), (300, 600, 14), (845, 220, 13)]:
+        b += bubble(cx, cy, r)
+    b += flower(205, 430, 105, rot=-12) + flower(285, 205, 52, rot=20, seed=3) + flower(930, 300, 78, rot=8, seed=11) + flower(830, 545, 40, rot=-25, seed=5)
+    b += sparkle(330, 105, 22, INK) + sparkle(110, 400, 14, CREAM_) + sparkle(1040, 230, 20, INK) + sparkle(800, 400, 13, CREAM_) + sparkle(965, 615, 15, INK)
+    b += heart(255, 585, 18, CREAM_, -15) + heart(810, 120, 20, CREAM_, 12) + heart(1060, 330, 13, INK, 18)
+    lw = 470
+    b += logo("daisys-logo-badge-ribbon", (W - lw) / 2, 112, lw)
+    return page(b, YEL)
 
 def back(p):
-    x = 100; body = ""
-    # sage + forest waves along the bottom edge, like the website
-    body += f'<path d="M0,598 Q280,560 560,598 T1125,598 V675 H0Z" fill="{SAGE_}"/>'
-    body += f'<path d="M0,622 Q300,592 600,618 T1125,612 V675 H0Z" fill="{FOR}"/>'
-    body += logo("daisys-logo-stamp", 745, 120, 300)
-    body += text(SERIF, p["name"], 80, x, 200, INK)[0]
-    body += text(SANS, p["title"], 19, x + 3, 250, FOR, 5)[0]
-    body += f'<rect x="{x+3}" y="282" width="60" height="5" rx="2.5" fill="{YEL}"/>'
-    rows = [("CALL", p["phone"]), ("EMAIL", p["email"]), ("WEB", p["web"]), ("VISIT", p["addr"])]
+    x = 100; b = ""
+    # yellow panel with a wavy edge on the right, holding the stamp
+    b += f'<path d="M800,0 C735,120 860,230 790,345 C725,455 845,560 785,675 H1125 V0Z" fill="{YEL}"/>'
+    for cx, cy, r in [(870, 95, 30), (1050, 625, 30), (840, 590, 16), (1075, 90, 15)]:
+        b += bubble(cx, cy, r)
+    b += f'<g transform="rotate(-7 925 330)">' + logo("daisys-logo-stamp", 805, 210, 240) + "</g>"
+    b += flower(1010, 525, 46, rot=15, seed=3) + sparkle(865, 470, 18, INK) + sparkle(1050, 330, 12, CREAM_) + heart(895, 190, 15, CREAM_, -12)
+    # greeting, name and a pill for the title
+    hi = text(SERIF_I, "Hi, I’m", 42, x, 145, FOR)
+    b += hi[0] + heart(x + hi[1] + 26, 132, 15, YEL, 10)
+    b += text(SERIF, p["name"], 86, x - 3, 228, INK)[0]
+    tw = width(SANS, p["title"], 17, 4)
+    b += f'<rect x="{x}" y="256" width="{tw + 44:.1f}" height="44" rx="22" fill="{FOR}"/>' + text(SANS, p["title"], 17, x + 22, 284, CREAM_, 4)[0]
+    rows = [("phone", p["phone"]), ("mail", p["email"]), ("web", p["web"]), ("pin", p["addr"])]
     for i, (k, v) in enumerate(rows):
-        y = 362 + i * 52
-        body += text(SANS, k, 14, x + 3, y - 1, FOR, 3.5)[0] + text(SANS4, v, 26, x + 105, y, INK)[0]
-    return page(body, CREAM_)
+        y = 370 + i * 57
+        b += icon(k, x + 23, y) + text(SANS4, v, 25, x + 62, y + 9, INK)[0]
+    b += trail([(560, 640, 80), (640, 610, 95), (715, 645, 80)], .3, INK, .12)
+    return page(b, CREAM_)
 
 out = sys.argv[1]; os.makedirs(out, exist_ok=True)
 slug = PERSON["name"].lower().replace(" ", "-")
@@ -58,5 +98,5 @@ for k, v in files.items(): open(f"{out}/{k}.html", "w").write(css + v)
 open(f"{out}/{slug}-cards-print.html", "w").write(css + "".join(files.values()))
 guide = f'<rect x="{B}" y="{B}" width="{W-2*B}" height="{H-2*B}" fill="none" stroke="#e5484d" stroke-width="2" stroke-dasharray="8 6"/><rect x="{2*B}" y="{2*B}" width="{W-4*B}" height="{H-4*B}" fill="none" stroke="#3e8ed0" stroke-width="2" stroke-dasharray="4 6"/>'
 prev = "".join(f'<div style="margin:20px"><div style="width:700px;box-shadow:0 10px 30px rgba(0,0,0,.2)">{v.replace("</svg>", guide + "</svg>", 1) if False else v}</div></div>' for v in files.values())
-open(f"{out}/preview.html", "w").write('<body style="background:#ddd;margin:0;display:flex;flex-wrap:wrap">' + prev.replace('width="3.75in" height="2.25in"', 'width="700" height="420"') + "</body>")
+open(f"{out}/preview.html", "w").write('<body style="background:#ddd;margin:0;display:flex;flex-direction:column">' + prev.replace('width="3.75in" height="2.25in"', 'width="700" height="420"') + "</body>")
 print("ok")
