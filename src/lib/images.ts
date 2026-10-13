@@ -40,19 +40,29 @@ export const STICKERS = {
  * faded section backdrops, then the gallery gets what's left.
  */
 export const IMAGES = {
-  heroSlides: [photo(4316), photo(4371), photo(4388), photo(3938), photo(4442)],
+  heroSlides: [photo(4316), photo(4371), photo(4388), photo(3938)],
   about: { src: "/images/groomer.jpg", alt: "Your groomer at Daisy's Dog Grooming" },
   services: photo(4230, "Apricot doodle with a fresh teddy-bear face"),
 };
 
 export const BACKDROPS = {
-  pricing: photo(4296).src,
-  reviews: photo(4405).src,
+  reviews: photo(4088).src,
   faq: photo(4340).src,
-  offer: photo(4358).src,
+  offer: photo(4076).src,
 };
 
-export const GALLERY: Img[] = [3812, 4061, 3836, 4088, 4452, 4066].map((n) => photo(n));
+// One of each dog, two rows of four: schnauzer, Pomeranian, cream doodle, heart-tail pup,
+// shih tzu, red poodle, Aussie, brown-and-white pup.
+export const GALLERY: Img[] = [
+  photo(3812, "Silver schnauzer with a fresh trim"),
+  photo(4066, "Black Pomeranian lying on the grooming table"),
+  photo(4296, "Cream doodle with a rounded teddy-bear cut"),
+  photo(4452, "Freshly groomed pup showing off a heart-shaped tail"),
+  photo(4337, "Brown and white shih tzu after a groom"),
+  photo(4405, "Red poodle with a curly, fluffy finish"),
+  photo(4358, "Aussie standing proud after a full groom"),
+  photo(4442, "Brown and white pup on the table, fresh from the bath"),
+];
 
 /** Daisy herself, the black miniature schnauzer the studio is named after. Not yet placed on the page. */
 const daisy = (name: string, alt: string): Img => ({ src: `/images/daisy/${name}.webp`, alt });

@@ -1,7 +1,6 @@
 import Wave from "./Wave";
 import Cutout from "./Cutout";
-import BgPhoto from "./BgPhoto";
-import { BACKDROPS, STICKERS } from "@/lib/images";
+import { STICKERS } from "@/lib/images";
 import { CircleText, Daisy, Paw, Sparkle } from "./Shapes";
 import { ADD_ONS, PACKAGES, SIZE_COLUMNS, SIZE_PRICING } from "@/lib/services";
 import { BOOKING_HREF } from "@/lib/site";
@@ -10,11 +9,10 @@ export default function Pricing() {
   return (
     <section id="pricing" className="relative">
       <div className="relative isolate overflow-hidden bg-forest pb-28 pt-20 text-center text-white sm:pb-36 sm:pt-24">
-        <BgPhoto src={BACKDROPS.pricing} tint opacity={0.22} className="inset-0" />
-        <Paw className="absolute left-[6%] top-10 h-16 w-16 -rotate-12 text-white/10" />
-        <Paw className="absolute left-[12%] top-28 h-10 w-10 rotate-12 text-white/10" />
-        <Daisy className="absolute right-[8%] top-12 h-14 w-14 animate-float opacity-90" />
-        <Sparkle className="absolute right-[18%] top-32 h-5 w-5 text-accent" />
+        <Paw className="absolute left-[6%] top-10 h-28 w-28 -rotate-12 text-white/10" />
+        <Paw className="absolute left-[12%] top-28 h-16 w-16 rotate-12 text-white/10" />
+        <Daisy className="absolute right-[7%] top-10 h-24 w-24 animate-float opacity-90" />
+        <Sparkle className="absolute right-[18%] top-32 h-9 w-9 text-accent" />
         <div className="container-x relative">
           <p className="eyebrow !text-sage justify-center">Pricing</p>
           <h2 className="mt-4 text-4xl sm:text-5xl">Simple, honest pricing</h2>

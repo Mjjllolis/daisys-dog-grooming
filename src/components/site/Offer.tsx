@@ -11,16 +11,16 @@ export default function Offer() {
       <Wave fill="rgb(var(--forest))" />
       <div className="relative isolate overflow-hidden bg-forest pb-20 pt-10 text-center text-white sm:pt-14 lg:pb-0">
         <BgPhoto src={BACKDROPS.offer} tint opacity={0.2} className="inset-0" />
-        <Daisy className="absolute left-[7%] top-16 h-16 w-16 animate-float" />
-        <Daisy className="absolute left-[16%] bottom-20 h-9 w-9 animate-float [animation-delay:-2s]" />
-        <Daisy className="absolute right-[10%] bottom-24 h-12 w-12 animate-float [animation-delay:-4s]" />
-        <Paw className="absolute right-[6%] top-12 h-14 w-14 rotate-[20deg] text-white/10" />
-        <Paw className="absolute right-[14%] top-28 h-9 w-9 rotate-[35deg] text-white/10" />
-        <Paw className="absolute bottom-10 left-[30%] h-8 w-8 -rotate-12 text-white/10" />
-        <Sparkle className="absolute left-[24%] top-24 h-5 w-5 text-accent" />
-        <div className="absolute right-[24%] top-16 hidden xl:block">
-          <CircleText id="offer-badge" text="Book 24/7 ✦ book online ✦ book 24/7 ✦ " size={160} textClass="fill-sage">
-            <span className="grid h-20 w-20 place-items-center rounded-full bg-accent shadow-lg"><Daisy className="h-12 w-12" center="#3e4b3a" /></span>
+        <Daisy className="absolute left-[6%] top-14 h-28 w-28 animate-float" />
+        <Daisy className="absolute left-[17%] bottom-20 h-14 w-14 animate-float [animation-delay:-2s]" />
+        <Daisy className="absolute right-[9%] bottom-24 h-20 w-20 animate-float [animation-delay:-4s]" />
+        <Paw className="absolute right-[6%] top-12 h-24 w-24 rotate-[20deg] text-white/10" />
+        <Paw className="absolute right-[14%] top-28 h-14 w-14 rotate-[35deg] text-white/10" />
+        <Paw className="absolute bottom-10 left-[30%] h-14 w-14 -rotate-12 text-white/10" />
+        <Sparkle className="absolute left-[24%] top-24 h-9 w-9 text-accent" />
+        <div className="absolute right-[28%] top-3 hidden xl:block">
+          <CircleText id="offer-badge" text="Book 24/7 ✦ book online ✦ book 24/7 ✦ " size={170} textClass="fill-sage">
+            <img src="/brand/daisys-logo-stamp.svg" alt="" className="h-24 w-24 drop-shadow-lg" />
           </CircleText>
         </div>
         <div className="container-x relative max-w-2xl">

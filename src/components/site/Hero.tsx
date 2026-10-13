@@ -24,11 +24,13 @@ export default function Hero() {
       {/* Soft background blobs + doodles */}
       <div className="absolute -left-40 -top-40 -z-10 h-[520px] w-[520px] animate-morph bg-[#676a57]" />
       <div className="absolute -bottom-32 right-[30%] -z-10 h-80 w-80 animate-morph bg-[#4f5243] [animation-delay:-6s]" />
-      <Paw className="absolute left-[44%] top-28 -z-10 hidden h-24 w-24 rotate-12 text-white/5 lg:block" />
-      <Sparkle className="absolute left-[6%] top-32 h-5 w-5 animate-float text-accent" />
-      <Sparkle className="absolute bottom-44 left-[44%] hidden h-3 w-3 animate-float text-white/60 sm:block" />
+      {/* Big faint daisy turning slowly behind the copy */}
+      <Daisy className="absolute -left-48 top-16 -z-10 h-[52rem] w-[52rem] animate-spin-slow opacity-[0.07] [animation-duration:140s]" petal="#f8f5ef" center="#f8f5ef" />
+      <Paw className="absolute left-[44%] top-28 -z-10 hidden h-36 w-36 rotate-12 text-white/5 lg:block" />
+      <Sparkle className="absolute left-[6%] top-36 h-9 w-9 animate-float text-accent" />
+      <Sparkle className="absolute bottom-44 left-[44%] hidden h-6 w-6 animate-float text-white/60 sm:block" />
 
-      <div className="container-x relative grid items-center gap-12 pb-36 pt-32 lg:min-h-[820px] lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-36">
+      <div className="container-x relative grid items-center gap-12 pb-36 pt-36 lg:min-h-[840px] lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-40">
         <div className="max-w-xl">
           <p className="eyebrow !text-sage">One-on-One Grooming · Addis, LA</p>
           <h1 className="mt-5 text-[44px] leading-[1.05] sm:text-6xl lg:text-7xl">
@@ -82,14 +84,12 @@ export default function Hero() {
             aria-label="Book a groom"
             className="absolute -left-14 top-16 hidden text-white transition-transform hover:scale-105 sm:block"
           >
-            <CircleText id="hero-badge" text="Book a groom ✦ spa days ✦ happy tails ✦ " size={150} textClass="fill-white/90">
-              <span className="grid h-16 w-16 place-items-center rounded-full bg-accent shadow-lg">
-                <Daisy className="h-11 w-11" center="#3e4b3a" />
-              </span>
+            <CircleText id="hero-badge" text="Book a groom ✦ spa days ✦ happy tails ✦ " size={190} textClass="fill-white/90">
+              <img src="/brand/daisys-logo-stamp.svg" alt="" className="h-24 w-24 drop-shadow-lg" />
             </CircleText>
           </a>
 
-          <Daisy className="absolute -right-5 top-1/3 h-12 w-12 animate-float" />
+          <Daisy className="absolute -right-8 top-1/3 h-20 w-20 animate-float" />
 
           {/* Cut-out pup "stepping out" of the frame */}
           <Cutout

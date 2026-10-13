@@ -25,7 +25,7 @@ export default function Header() {
         solid ? "bg-background/95 shadow-[0_1px_0_rgb(var(--border))] backdrop-blur" : "bg-transparent"
       }`}
     >
-      <div className="container-x flex h-20 items-center sm:h-24 justify-between gap-6">
+      <div className="container-x flex h-24 items-center sm:h-28 justify-between gap-6">
         <Logo light={!solid} />
 
         <nav className="hidden items-center gap-8 lg:flex">

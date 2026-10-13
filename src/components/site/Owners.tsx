@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Cutout from "./Cutout";
+import { DaisyBadge } from "./MeetDaisy";
 import { Paw } from "./Shapes";
-import { CUTOUTS } from "@/lib/images";
 import { OWNERS, type Owner } from "@/lib/team";
 
 function Portrait({ owner, sizes, className = "" }: { owner: Owner; sizes: string; className?: string }) {
@@ -54,12 +53,12 @@ export default function Owners() {
 
   return (
     <>
-      <div className="grid grid-cols-2 items-start gap-4 pb-6 sm:gap-6">
+      <div className="grid grid-cols-2 items-start gap-4 pb-6 sm:gap-8">
         {/* Owner one */}
         <div className="relative">
           <Portrait
             owner={first}
-            sizes="(min-width:1024px) 22vw, 45vw"
+            sizes="(min-width:1024px) 30vw, 48vw"
             className="aspect-[3/4] rounded-t-full shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]"
           />
           <MeetButton owner={first} onClick={() => setOpen(first)} className="-bottom-4" />
@@ -67,14 +66,10 @@ export default function Owners() {
 
         {/* Owner two — set a little lower, with a pup lounging on top */}
         <div className="relative mt-24 sm:mt-28">
-          <Cutout
-            {...CUTOUTS.dachshund}
-            sizes="(min-width:640px) 300px, 200px"
-            className="absolute -top-[5.5rem] left-1/2 z-20 h-28 w-48 -translate-x-1/2 sm:-top-28 sm:h-36 sm:w-60"
-          />
+          <DaisyBadge className="-top-[6.5rem] left-1/2 h-36 w-36 -translate-x-1/2 sm:-top-28 sm:h-44 sm:w-44" />
           <Portrait
             owner={second}
-            sizes="(min-width:1024px) 22vw, 45vw"
+            sizes="(min-width:1024px) 30vw, 48vw"
             className="aspect-[3/4] rounded-t-full shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]"
           />
           <MeetButton owner={second} onClick={() => setOpen(second)} className="-bottom-4" />

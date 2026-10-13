@@ -29,7 +29,7 @@ export default function Services() {
                 <span className="block text-[10px] font-sans uppercase tracking-widest text-white/70">from</span>
                 <span className="text-3xl">$45</span>
               </span>
-              <Sparkle className="absolute -right-1 -top-1 h-5 w-5 text-accent" />
+              <Sparkle className="absolute -right-2 -top-2 h-8 w-8 text-accent" />
             </p>
             <a href={BOOKING_HREF} target="_blank" rel="noopener" className="btn-primary">
               Book Now
@@ -44,7 +44,7 @@ export default function Services() {
               <Image src={IMAGES.services.src} alt={IMAGES.services.alt} fill sizes="(min-width:1024px) 40vw, 90vw" className="object-cover object-[center_75%]" />
             </div>
             <Daisy className="absolute -left-3 top-8 h-16 w-16 animate-float" />
-            <Daisy className="absolute bottom-6 right-0 h-10 w-10 animate-float [animation-delay:-3s]" petal="#ffffff" />
+            <Daisy className="absolute bottom-6 right-0 h-16 w-16 animate-float [animation-delay:-3s]" petal="#ffffff" />
             <Cutout
               {...STICKERS.doodleSparkles}
               decorative

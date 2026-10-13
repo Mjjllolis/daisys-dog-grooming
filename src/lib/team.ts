@@ -1,6 +1,6 @@
 /**
  * The two owners, shown in the About section with a "Meet …" popup each.
- * TODO: real names, roles, bios and a photo for the second owner.
+ * TODO: confirm which owner is in groomer.jpg, then real roles, bios and a photo for the second owner.
  */
 export type Owner = {
   name: string;
@@ -12,7 +12,7 @@ export type Owner = {
 
 export const OWNERS: Owner[] = [
   {
-    name: "Owner Name",
+    name: "Emily Lolis",
     role: "Co-owner & Groomer",
     photo: "/images/groomer.jpg",
     bio: [
@@ -22,7 +22,7 @@ export const OWNERS: Owner[] = [
     favorites: ["Favorite cut: placeholder", "Own pets: placeholder"],
   },
   {
-    name: "Owner Name",
+    name: "Faith Scott",
     role: "Co-owner",
     photo: null, // TODO: add public/images/owner-2.jpg and point this at it
     bio: [
@@ -32,3 +32,12 @@ export const OWNERS: Owner[] = [
     favorites: ["Favorite breed: placeholder", "Fun fact: placeholder"],
   },
 ];
+
+/** Copy for the "Meet Daisy" popup. TODO: confirm with the owners and add anything they'd like said about her. */
+export const DAISY_INTRO = {
+  eyebrow: "The name on the door",
+  bio: [
+    "This is Daisy, the black miniature schnauzer behind the name.",
+    "Here she is in a few of her favourite looks: sweaters, scarves and the occasional leaf pile.",
+  ],
+};

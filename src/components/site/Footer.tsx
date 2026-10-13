@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1.1fr_1fr]">
         <div className="grid gap-10 sm:grid-cols-2">
           <div className="sm:col-span-2">
-            <Logo light className="h-16 w-auto" />
+            <Logo light className="h-24 w-auto sm:h-28" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               Calm, one-on-one dog grooming in Addis, Louisiana.
             </p>
