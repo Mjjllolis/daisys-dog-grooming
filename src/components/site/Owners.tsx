@@ -54,19 +54,19 @@ export default function Owners() {
 
   return (
     <>
-      <div className="relative pb-16 sm:pb-20">
-        {/* Owner one — large arch */}
-        <div className="relative w-[78%]">
+      <div className="grid grid-cols-2 items-start gap-4 pb-6 sm:gap-6">
+        {/* Owner one */}
+        <div className="relative">
           <Portrait
             owner={first}
-            sizes="(min-width:1024px) 32vw, 70vw"
-            className="aspect-[4/5] rounded-t-full shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]"
+            sizes="(min-width:1024px) 22vw, 45vw"
+            className="aspect-[3/4] rounded-t-full shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]"
           />
-          <MeetButton owner={first} onClick={() => setOpen(first)} className="bottom-5" />
+          <MeetButton owner={first} onClick={() => setOpen(first)} className="-bottom-4" />
         </div>
 
-        {/* Owner two — smaller arch overlapping bottom-right, with a pup lounging on top */}
-        <div className="absolute bottom-0 right-0 w-[46%]">
+        {/* Owner two — set a little lower, with a pup lounging on top */}
+        <div className="relative mt-24 sm:mt-28">
           <Cutout
             {...CUTOUTS.dachshund}
             sizes="(min-width:640px) 300px, 200px"
@@ -74,8 +74,8 @@ export default function Owners() {
           />
           <Portrait
             owner={second}
-            sizes="(min-width:1024px) 20vw, 45vw"
-            className="aspect-[3/4] rounded-t-full border-[6px] border-background shadow-xl"
+            sizes="(min-width:1024px) 22vw, 45vw"
+            className="aspect-[3/4] rounded-t-full shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]"
           />
           <MeetButton owner={second} onClick={() => setOpen(second)} className="-bottom-4" />
         </div>
