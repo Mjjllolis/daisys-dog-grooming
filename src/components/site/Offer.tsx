@@ -2,7 +2,7 @@ import Wave from "./Wave";
 import Cutout from "./Cutout";
 import BgPhoto from "./BgPhoto";
 import { BACKDROPS, STICKERS } from "@/lib/images";
-import { ArcText, CircleText, Daisy, Paw, Sparkle } from "./Shapes";
+import { ArcText, Daisy, Paw, Sparkle } from "./Shapes";
 import { BOOKING_HREF, CONTACT, PORTAL_HREF } from "@/lib/site";
 
 export default function Offer() {
@@ -18,11 +18,6 @@ export default function Offer() {
         <Paw className="absolute right-[14%] top-28 hidden h-14 w-14 rotate-[35deg] text-white/10 sm:block" />
         <Paw className="absolute bottom-10 left-[30%] h-14 w-14 -rotate-12 text-white/10" />
         <Sparkle className="absolute left-[24%] top-24 hidden h-9 w-9 text-accent sm:block" />
-        <div className="absolute right-[28%] top-3 hidden xl:block">
-          <CircleText id="offer-badge" text="Book 24/7 ✦ book online ✦ book 24/7 ✦ " size={170} textClass="fill-sage">
-            <img src="/brand/daisys-logo-stamp.svg" alt="" className="h-24 w-24 drop-shadow-lg" />
-          </CircleText>
-        </div>
         <div className="container-x relative max-w-2xl">
           <ArcText id="offer-arc" text="new pups welcome" className="mx-auto -mb-4 text-sage" width={300} />
           <p className="eyebrow !text-sage justify-center">Ready When You Are</p>
