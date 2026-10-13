@@ -1,0 +1,129 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import Cutout from "./Cutout";
+import { Paw } from "./Shapes";
+import { CUTOUTS } from "@/lib/images";
+import { OWNERS, type Owner } from "@/lib/team";
+
+function Portrait({ owner, sizes, className = "" }: { owner: Owner; sizes: string; className?: string }) {
+  return (
+    <div className={`relative overflow-hidden bg-sage-soft ${className}`}>
+      {owner.photo ? (
+        <Image src={owner.photo} alt={`${owner.name}, ${owner.role}`} fill sizes={sizes} className="object-cover object-top" />
+      ) : (
+        <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_50%_40%,rgb(var(--sage)/0.45),rgb(var(--sage-soft)))]">
+          <div className="text-center text-forest/70">
+            <Paw className="mx-auto h-12 w-12" />
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-widest">Photo coming soon</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MeetButton({ owner, onClick, className = "" }: { owner: Owner; onClick: () => void; className?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`absolute left-1/2 z-30 -translate-x-1/2 whitespace-nowrap rounded-full bg-surface px-5 py-2.5 text-sm font-semibold text-foreground shadow-lg transition hover:bg-accent hover:text-white ${className}`}
+    >
+      Meet {owner.name} <span className="ml-1 text-accent group-hover:text-white">+</span>
+    </button>
+  );
+}
+
+/** Two arched owner portraits; each opens a popup with their bio. */
+export default function Owners() {
+  const [open, setOpen] = useState<Owner | null>(null);
+  const [first, second] = OWNERS;
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <>
+      <div className="relative pb-16 sm:pb-20">
+        {/* Owner one — large arch */}
+        <div className="relative w-[78%]">
+          <Portrait
+            owner={first}
+            sizes="(min-width:1024px) 32vw, 70vw"
+            className="aspect-[4/5] rounded-t-full shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]"
+          />
+          <MeetButton owner={first} onClick={() => setOpen(first)} className="bottom-5" />
+        </div>
+
+        {/* Owner two — smaller arch overlapping bottom-right, with a pup lounging on top */}
+        <div className="absolute bottom-0 right-0 w-[46%]">
+          <Cutout
+            {...CUTOUTS.dachshund}
+            sizes="(min-width:640px) 300px, 200px"
+            className="absolute -top-[5.5rem] left-1/2 z-20 h-28 w-48 -translate-x-1/2 sm:-top-28 sm:h-36 sm:w-60"
+          />
+          <Portrait
+            owner={second}
+            sizes="(min-width:1024px) 20vw, 45vw"
+            className="aspect-[3/4] rounded-t-full border-[6px] border-background shadow-xl"
+          />
+          <MeetButton owner={second} onClick={() => setOpen(second)} className="-bottom-4" />
+        </div>
+      </div>
+
+      {open && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`About ${open.name}`}
+          className="fixed inset-0 z-[100] grid place-items-center bg-[#2a2a24]/60 p-4 backdrop-blur-sm"
+          onClick={() => setOpen(null)}
+        >
+          <div
+            className="relative grid max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[2rem] bg-background shadow-2xl sm:grid-cols-[0.9fr_1.1fr]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Portrait owner={open} sizes="400px" className="aspect-[4/3] sm:aspect-auto sm:min-h-[420px]" />
+            <div className="p-8 sm:p-10">
+              <p className="eyebrow">{open.role}</p>
+              <h3 className="mt-3 text-4xl">{open.name}</h3>
+              <div className="mt-5 space-y-4 leading-relaxed text-muted">
+                {open.bio.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              {open.favorites && (
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {open.favorites.map((f) => (
+                    <li key={f} className="rounded-full border border-border bg-surface px-4 py-1.5 text-sm">
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <button
+              type="button"
+              aria-label="Close"
+              autoFocus
+              onClick={() => setOpen(null)}
+              className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-surface text-xl shadow-md transition hover:bg-accent hover:text-white"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
