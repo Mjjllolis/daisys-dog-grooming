@@ -14,7 +14,7 @@ export default function Services() {
         <div className="order-2 lg:order-1">
           <p className="eyebrow">Dog Grooming</p>
           <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
-            Baths, cuts &amp; <span className="italic text-accent">breed styling</span>
+            Baths, cuts &amp; <span className="italic text-forest">breed styling</span>
           </h2>
           <p className="mt-6 max-w-lg leading-relaxed text-muted">
             From a quick bath to a full haircut, every groom is tailored to your dog&apos;s coat, size and personality —
@@ -37,14 +37,14 @@ export default function Services() {
           </div>
         </div>
         <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-xl">
-          <ArcText id="services-arc" text="fresh · fluffy · happy" className="mx-auto -mb-6 text-accent" width={380} />
+          <ArcText id="services-arc" text="fresh · fluffy · happy" className="mx-auto -mb-6 text-forest" width={380} />
           <div className="relative aspect-square">
             <div className="absolute inset-[-6%] animate-spin-slow rounded-full border-2 border-dashed border-accent/40" />
             <div className="absolute inset-0 animate-morph overflow-hidden shadow-[0_30px_60px_-30px_rgba(62,75,58,0.6)]">
               <Image src={IMAGES.services.src} alt={IMAGES.services.alt} fill sizes="(min-width:1024px) 40vw, 90vw" className="object-cover object-[center_75%]" />
             </div>
             <Daisy className="absolute -left-3 top-8 h-16 w-16 animate-float" />
-            <Daisy className="absolute bottom-6 right-0 h-10 w-10 animate-float [animation-delay:-3s]" petal="#ffffff" center="#c0664a" />
+            <Daisy className="absolute bottom-6 right-0 h-10 w-10 animate-float [animation-delay:-3s]" petal="#ffffff" />
             <Cutout
               {...STICKERS.doodleSparkles}
               decorative

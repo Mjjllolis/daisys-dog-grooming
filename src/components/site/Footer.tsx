@@ -5,7 +5,7 @@ import { BOOKING_HREF, CONTACT, FACEBOOK_HREF, HOURS, MAPS_EMBED, MAPS_HREF, POR
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative bg-[#2f392c] text-white/80">
+    <footer id="contact" className="relative bg-foreground text-white/80">
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1.1fr_1fr]">
         <div className="grid gap-10 sm:grid-cols-2">
           <div className="sm:col-span-2">

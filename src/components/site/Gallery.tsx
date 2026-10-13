@@ -19,7 +19,7 @@ export default function Gallery() {
         <div>
           <p className="eyebrow">Fresh Off the Table</p>
           <h2 className="mt-4 text-4xl sm:text-5xl">
-            Recent <span className="italic text-accent">glow-ups</span>
+            Recent <span className="italic text-forest">glow-ups</span>
           </h2>
         </div>
         <a href={FACEBOOK_HREF} target="_blank" rel="noopener" className="btn-outline">
@@ -47,7 +47,7 @@ export default function Gallery() {
         <div className="pointer-events-none absolute -right-6 top-1/3 hidden text-forest xl:block">
           <CircleText id="gallery-badge" text="Fresh ✦ fluffy ✦ happy ✦ fresh ✦ fluffy ✦ " size={130} textClass="fill-forest">
             <span className="grid h-14 w-14 place-items-center rounded-full bg-accent shadow-md">
-              <Paw className="h-7 w-7 text-white" />
+              <Paw className="h-7 w-7 text-foreground" />
             </span>
           </CircleText>
         </div>

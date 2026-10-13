@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 // Brand tokens are declared as CSS variables in src/app/globals.css and surfaced
-// to Tailwind here. Palette: warm cream, sage/olive green, terracotta.
+// to Tailwind here. Palette (brand guide): Ink, Cream, Sage, Daisy Yellow (accent), Forest.
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {

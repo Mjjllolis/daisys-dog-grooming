@@ -57,7 +57,7 @@ export default function Ticker() {
         aria-hidden
       >
         <Ribbon id="wave-back" dy={46} band="rgb(var(--sage))" ink="rgb(var(--forest))" reverse dur="60s" />
-        <Ribbon id="wave-front" dy={0} band="rgb(var(--accent))" ink="#ffffff" dur="50s" />
+        <Ribbon id="wave-front" dy={0} band="rgb(var(--accent))" ink="rgb(var(--foreground))" dur="50s" />
       </svg>
     </div>
   );

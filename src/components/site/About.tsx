@@ -24,7 +24,7 @@ export default function About() {
         <p className="eyebrow">About Us · Meet the Owners</p>
         <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
           A calm, cozy space where every pup is{" "}
-          <span className="relative whitespace-nowrap italic text-accent">
+          <span className="relative whitespace-nowrap italic text-forest">
             family
             <Sparkle className="absolute -right-6 -top-2 h-5 w-5 text-sage" />
           </span>

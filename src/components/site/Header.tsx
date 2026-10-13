@@ -34,8 +34,8 @@ export default function Header() {
               key={item.href}
               href={item.href}
               className={`relative text-sm font-medium transition-colors ${
-                solid ? "text-foreground/80 hover:text-accent" : "text-white/85 hover:text-white"
-              } ${i === 0 ? (solid ? "text-accent" : "text-[#f2c9a0]") : ""}`}
+                solid ? "text-foreground/80 hover:text-forest" : "text-white/85 hover:text-white"
+              } ${i === 0 ? (solid ? "text-forest" : "text-accent") : ""}`}
             >
               {item.label}
               {i === 0 && <span className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded bg-current" />}
@@ -48,7 +48,7 @@ export default function Header() {
             href={PORTAL_HREF}
             target="_blank"
             rel="noopener"
-            className={`hidden text-sm font-medium sm:inline ${solid ? "text-foreground/80 hover:text-accent" : "text-white/85 hover:text-white"}`}
+            className={`hidden text-sm font-medium sm:inline ${solid ? "text-foreground/80 hover:text-forest" : "text-white/85 hover:text-white"}`}
           >
             Client Login
           </a>
@@ -83,7 +83,7 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <a href={PORTAL_HREF} target="_blank" rel="noopener" className="py-3.5 font-serif text-xl text-accent">
+          <a href={PORTAL_HREF} target="_blank" rel="noopener" className="py-3.5 font-serif text-xl text-forest">
             Client Login
           </a>
         </nav>

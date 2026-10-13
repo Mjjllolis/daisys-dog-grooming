@@ -25,17 +25,17 @@ export default function Hero() {
       <div className="absolute -left-40 -top-40 -z-10 h-[520px] w-[520px] animate-morph bg-[#676a57]" />
       <div className="absolute -bottom-32 right-[30%] -z-10 h-80 w-80 animate-morph bg-[#4f5243] [animation-delay:-6s]" />
       <Paw className="absolute left-[44%] top-28 -z-10 hidden h-24 w-24 rotate-12 text-white/5 lg:block" />
-      <Sparkle className="absolute left-[6%] top-32 h-5 w-5 animate-float text-[#f2c9a0]" />
+      <Sparkle className="absolute left-[6%] top-32 h-5 w-5 animate-float text-accent" />
       <Sparkle className="absolute bottom-44 left-[44%] hidden h-3 w-3 animate-float text-white/60 sm:block" />
 
       <div className="container-x relative grid items-center gap-12 pb-36 pt-32 lg:min-h-[820px] lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-36">
         <div className="max-w-xl">
-          <p className="eyebrow !text-[#f2c9a0]">One-on-One Grooming · Addis, LA</p>
+          <p className="eyebrow !text-sage">One-on-One Grooming · Addis, LA</p>
           <h1 className="mt-5 text-[44px] leading-[1.05] sm:text-6xl lg:text-7xl">
             Spa days for the pups you{" "}
-            <span className="relative inline-block italic text-[#f2c9a0]">
+            <span className="relative inline-block italic text-accent">
               love
-              <Squiggle className="absolute -bottom-2 left-0 h-3 w-full text-accent sm:-bottom-3 sm:h-4" />
+              <Squiggle className="absolute -bottom-2 left-0 h-3 w-full text-sage sm:-bottom-3 sm:h-4" />
             </span>
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
@@ -60,7 +60,7 @@ export default function Hero() {
 
         {/* Arched photo frame with crossfading real grooms */}
         <div className="relative mx-auto w-full max-w-[440px] lg:mr-0 lg:max-w-[500px]">
-          <div className="absolute inset-0 translate-x-5 translate-y-5 rounded-t-full rounded-b-[2.5rem] border-2 border-[#f2c9a0]/50" />
+          <div className="absolute inset-0 translate-x-5 translate-y-5 rounded-t-full rounded-b-[2.5rem] border-2 border-accent/50" />
           <div className="relative aspect-[3/4] overflow-hidden rounded-t-full rounded-b-[2.5rem] bg-[#4f5243] shadow-2xl">
             {SLIDES.map((slide, i) => (
               <Image
@@ -84,7 +84,7 @@ export default function Hero() {
           >
             <CircleText id="hero-badge" text="Book a groom ✦ spa days ✦ happy tails ✦ " size={150} textClass="fill-white/90">
               <span className="grid h-16 w-16 place-items-center rounded-full bg-accent shadow-lg">
-                <Daisy className="h-11 w-11" />
+                <Daisy className="h-11 w-11" center="#3e4b3a" />
               </span>
             </CircleText>
           </a>

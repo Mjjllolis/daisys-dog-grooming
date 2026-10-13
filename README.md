@@ -26,6 +26,7 @@ Brand tokens (cream / forest / sage / terracotta) are in `src/app/globals.css`.
 
 ## Brand
 
-- Logo files: `public/brand/*.svg` (horizontal, reversed, ink, stacked, wordmark, round mark). Favicon: `src/app/icon.svg`, `src/app/apple-icon.png`.
-- The schnauzer is a hand-redrawn monoline path (`brand/source/dog.svg`); lettering is Sacramento + Yanone Kaffeesatz 600, converted to outlines. Rebuild every variant with `python build.py` from `brand/source/` (needs `fonttools`).
-- Brand guide (colours, type, voice, logo rules): https://claude.ai/artifact/NdiGFdEnFenSjJf8Qi3cEE
+- Brand palette: Ink `#2A2A24`, Cream `#F8F5EF`, Sage `#A9B29B`, Daisy Yellow `#E0A24A` (the `accent` token: buttons and small pops, never text on cream), Forest `#3E4B3A` (text highlights and labels on cream, deep bands). Fonts: Newsreader + DM Sans.
+- Logo files: `public/brand/daisys-logo-*.svg` (badge, badge with ribbon, horizontal, horizontal reversed, stamp, one-colour stamp). Favicon: `src/app/icon.svg`, `src/app/apple-icon.png`.
+- Logo source: `brand/final/` (`final_ink.py` builds the set, `knockout.py` makes the one-colour cut-out). Every concept round is in `brand/concepts/`.
+- Brand guide: https://claude.ai/artifact/NdiGFdEnFenSjJf8Qi3cEE · Colour guide: https://claude.ai/artifact/AXRJszAGCjGaTiWhAq42UW · Logo journey: https://claude.ai/artifact/FyMPSKBSwRk3hAei64toN4

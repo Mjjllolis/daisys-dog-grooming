@@ -53,3 +53,14 @@ export const BACKDROPS = {
 };
 
 export const GALLERY: Img[] = [3812, 4061, 3836, 4088, 4452, 4066].map((n) => photo(n));
+
+/** Daisy herself, the black miniature schnauzer the studio is named after. Not yet placed on the page. */
+const daisy = (name: string, alt: string): Img => ({ src: `/images/daisy/${name}.webp`, alt });
+export const DAISY = {
+  inTheLeaves: daisy("daisy-in-the-leaves", "Daisy, a black schnauzer, grinning out of a pile of autumn leaves"),
+  smiling: daisy("daisy-smiling-portrait", "Daisy smiling up at the camera"),
+  holidayScarf: daisy("daisy-holiday-scarf", "Daisy lying down in a striped holiday scarf"),
+  pinkSweater: daisy("daisy-pink-sweater-leaves", "Daisy in a pink sweater sitting in the leaves"),
+  blackAndWhite: daisy("daisy-black-and-white-portrait", "Black-and-white portrait of Daisy's bearded face"),
+  leafPile: daisy("daisy-leaf-pile-with-friend", "Daisy in a leaf pile with a young friend"),
+};

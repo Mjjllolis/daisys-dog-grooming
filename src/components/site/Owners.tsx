@@ -29,9 +29,9 @@ function MeetButton({ owner, onClick, className = "" }: { owner: Owner; onClick:
     <button
       type="button"
       onClick={onClick}
-      className={`absolute left-1/2 z-30 -translate-x-1/2 whitespace-nowrap rounded-full bg-surface px-5 py-2.5 text-sm font-semibold text-foreground shadow-lg transition hover:bg-accent hover:text-white ${className}`}
+      className={`absolute left-1/2 z-30 -translate-x-1/2 whitespace-nowrap rounded-full bg-surface px-5 py-2.5 text-sm font-semibold text-foreground shadow-lg transition hover:bg-accent ${className}`}
     >
-      Meet {owner.name} <span className="ml-1 text-accent group-hover:text-white">+</span>
+      Meet {owner.name} <span className="ml-1 text-forest">+</span>
     </button>
   );
 }
@@ -117,7 +117,7 @@ export default function Owners() {
               aria-label="Close"
               autoFocus
               onClick={() => setOpen(null)}
-              className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-surface text-xl shadow-md transition hover:bg-accent hover:text-white"
+              className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-surface text-xl shadow-md transition hover:bg-accent"
             >
               ×
             </button>

@@ -24,8 +24,8 @@ export default function Faq() {
         <div className="self-start divide-y divide-border rounded-[2rem] bg-surface px-6 py-2 shadow-[0_30px_60px_-40px_rgba(62,75,58,0.45)] sm:px-12 sm:py-4">
           {FAQS.map((f, i) => (
             <details key={f.q} className="group py-6 sm:py-8" open={i === 0}>
-              <summary className="flex cursor-pointer list-none items-center gap-5 font-serif text-xl text-foreground marker:hidden group-open:text-accent sm:text-[1.75rem] sm:leading-snug [&::-webkit-details-marker]:hidden">
-                <span className="w-6 flex-none text-center text-2xl text-accent">
+              <summary className="flex cursor-pointer list-none items-center gap-5 font-serif text-xl text-foreground marker:hidden group-open:text-forest sm:text-[1.75rem] sm:leading-snug [&::-webkit-details-marker]:hidden">
+                <span className="w-6 flex-none text-center text-2xl text-forest">
                   <span className="group-open:hidden">+</span>
                   <span className="hidden group-open:inline">–</span>
                 </span>

@@ -14,9 +14,9 @@ export default function Pricing() {
         <Paw className="absolute left-[6%] top-10 h-16 w-16 -rotate-12 text-white/10" />
         <Paw className="absolute left-[12%] top-28 h-10 w-10 rotate-12 text-white/10" />
         <Daisy className="absolute right-[8%] top-12 h-14 w-14 animate-float opacity-90" />
-        <Sparkle className="absolute right-[18%] top-32 h-5 w-5 text-[#f2c9a0]" />
+        <Sparkle className="absolute right-[18%] top-32 h-5 w-5 text-accent" />
         <div className="container-x relative">
-          <p className="eyebrow !text-[#f2c9a0] justify-center">Pricing</p>
+          <p className="eyebrow !text-sage justify-center">Pricing</p>
           <h2 className="mt-4 text-4xl sm:text-5xl">Simple, honest pricing</h2>
           <p className="mt-4 text-white/75">Clear starting prices, by size. No surprises.</p>
         </div>
@@ -48,7 +48,7 @@ export default function Pricing() {
                 <div className="absolute -right-6 top-6 text-white">
                   <CircleText id="popular-badge" text="Most popular ✦ most popular ✦ " size={104} textClass="fill-white">
                     <span className="absolute inset-0 -z-10 m-auto h-[104px] w-[104px] rounded-full bg-accent shadow-lg" />
-                    <Daisy className="h-9 w-9" />
+                    <Daisy className="h-9 w-9" center="#3e4b3a" />
                   </CircleText>
                 </div>
               )}
@@ -61,7 +61,7 @@ export default function Pricing() {
               <ul className="mt-6 flex-1 space-y-3 text-sm">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-center gap-3">
-                    <span className="grid h-4 w-4 flex-none place-items-center rounded-full bg-accent text-[8px] text-white">✓</span>
+                    <span className="grid h-4 w-4 flex-none place-items-center rounded-full bg-accent text-[8px] text-foreground">✓</span>
                     <span className={p.featured ? "text-white/85" : "text-foreground/80"}>{f}</span>
                   </li>
                 ))}
@@ -79,7 +79,7 @@ export default function Pricing() {
           <div className="text-center">
             <p className="eyebrow justify-center">Pricing by Size</p>
             <h3 className="mt-3 text-3xl sm:text-4xl">
-              Find your pup&apos;s <span className="italic text-accent">price</span>
+              Find your pup&apos;s <span className="italic text-forest">price</span>
             </h3>
             <p className="mt-3 text-sm text-muted">Starting prices by weight.</p>
           </div>
@@ -115,7 +115,7 @@ export default function Pricing() {
                     <p className="text-xs text-muted">{row.weight}</p>
                   </div>
                   {row.prices.map((price, i) => (
-                    <p key={i} className="text-center font-serif text-lg text-accent sm:text-xl">
+                    <p key={i} className="text-center font-serif text-lg text-forest sm:text-xl">
                       ${price}
                       {row.plus && <sup className="ml-0.5 text-xs">+</sup>}
                     </p>
@@ -141,7 +141,7 @@ export default function Pricing() {
                   }`}
                 >
                   <span className="font-medium">{a.name}</span>
-                  <span className="font-serif text-accent">{a.price}</span>
+                  <span className="font-serif text-forest">{a.price}</span>
                 </span>
               ))}
             </div>
