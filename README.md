@@ -23,3 +23,9 @@ Brand tokens (cream / forest / sage / terracotta) are in `src/app/globals.css`.
 - Reviews in `src/lib/testimonials.ts` are **placeholders** — replace with real Google/Facebook reviews.
 - Confirm the person in `groomer.jpg` is the groomer and that they're happy to be featured.
 - Domain in `src/lib/site.ts` is a guess (TODO).
+
+## Brand
+
+- Logo files: `public/brand/*.svg` (horizontal, reversed, ink, stacked, wordmark, round mark). Favicon: `src/app/icon.svg`, `src/app/apple-icon.png`.
+- The schnauzer is a hand-redrawn monoline path (`brand/source/dog.svg`); lettering is Sacramento + Yanone Kaffeesatz 600, converted to outlines. Rebuild every variant with `python build.py` from `brand/source/` (needs `fonttools`).
+- Brand guide (colours, type, voice, logo rules): https://claude.ai/artifact/NdiGFdEnFenSjJf8Qi3cEE
