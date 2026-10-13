@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Brand tokens. Warm cream base, sage/forest greens, terracotta accent —
+   Newsreader for display, DM Sans for UI.
+   Stored as RGB channels so Tailwind opacity modifiers (bg-forest/80) work.
+   --------------------------------------------------------------------------- */
+
+:root {
+	--background: 248 245 239;   /* warm cream */
+	--foreground: 42 42 36;   /* soft ink */
+	--surface: 255 255 255;
+	--muted: 110 107 98;
+	--border: 230 224 212;
+	--accent: 192 102 74;       /* terracotta */
+	--accent-dark: 169 85 59;
+	--forest: 62 75 58;       /* deep green, pricing + offer bands */
+	--olive: 90 92 76;        /* hero overlay */
+	--sage: 169 178 155;
+	--sage-soft: 233 235 225;
+}
+
+html {
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	color: rgb(var(--foreground));
+	background: rgb(var(--background));
+	font-family: var(--font-sans);
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	font-family: var(--font-serif);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+}
+
+@layer components {
+	.eyebrow {
+		@apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-accent;
+	}
+	.eyebrow::before {
+		content: "✦";
+		@apply text-[9px];
+	}
+	.btn {
+		@apply inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold transition-colors duration-200;
+	}
+	.btn-primary {
+		@apply btn bg-accent text-white shadow-sm hover:bg-accent-dark;
+	}
+	.btn-outline-light {
+		@apply btn border border-white/80 text-white hover:bg-white hover:text-foreground;
+	}
+	.btn-outline {
+		@apply btn border border-foreground/70 text-foreground hover:bg-foreground hover:text-background;
+	}
+	.container-x {
+		@apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.animate-marquee { animation: none; }
+}
