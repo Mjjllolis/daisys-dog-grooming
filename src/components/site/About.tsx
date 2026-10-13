@@ -2,7 +2,7 @@ import Image from "next/image";
 import CheckList from "./CheckList";
 import Cutout from "./Cutout";
 import { CircleText, Daisy, Paw, Sparkle } from "./Shapes";
-import { CUTOUTS, IMAGES, STICKERS } from "@/lib/images";
+import { CUTOUTS, IMAGES } from "@/lib/images";
 import { ABOUT_POINTS } from "@/lib/services";
 
 export default function About() {
@@ -24,8 +24,8 @@ export default function About() {
         </div>
         <Cutout
           {...CUTOUTS.dachshund}
-          sizes="(min-width:640px) 360px, 260px"
-          className="absolute -bottom-14 -left-6 z-20 h-44 w-64 sm:-left-20 sm:h-56 sm:w-80"
+          sizes="(min-width:640px) 520px, 320px"
+          className="absolute -bottom-20 -left-6 z-20 h-56 w-80 sm:-left-28 sm:h-80 sm:w-[30rem]"
         />
         <div className="absolute -bottom-6 -right-2 hidden rounded-[40px_40px_40px_8px] sm:block bg-forest px-6 py-5 text-white shadow-xl sm:-right-6">
           <p className="font-serif text-3xl">1 : 1</p>
@@ -33,13 +33,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative">
-        <Cutout
-          {...STICKERS.jackRussell}
-          decorative
-          sizes="200px"
-          className="absolute -bottom-16 right-0 hidden h-48 w-40 rotate-6 lg:block"
-        />
+      <div>
         <p className="eyebrow">About Us</p>
         <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
           A calm, cozy space where every pup is{" "}

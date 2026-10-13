@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Cutout from "./Cutout";
 import { CircleText, Paw } from "./Shapes";
-import { GALLERY, STICKERS } from "@/lib/images";
+import { GALLERY } from "@/lib/images";
 import { FACEBOOK_HREF } from "@/lib/site";
 
 const SHAPES = [
@@ -17,13 +16,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="container-x relative py-20 sm:py-28">
       <div className="flex flex-wrap items-end justify-between gap-6">
-        <div className="relative">
-          <Cutout
-            {...STICKERS.blackPoodle}
-            decorative
-            sizes="200px"
-            className="absolute -right-36 -bottom-4 hidden h-40 w-32 rotate-12 sm:block"
-          />
+        <div>
           <p className="eyebrow">Fresh Off the Table</p>
           <h2 className="mt-4 text-4xl sm:text-5xl">
             Recent <span className="italic text-accent">glow-ups</span>

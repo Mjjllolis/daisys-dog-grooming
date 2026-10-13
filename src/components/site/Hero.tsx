@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import Wave from "./Wave";
 import Cutout from "./Cutout";
 import { CircleText, Daisy, Paw, Sparkle, Squiggle } from "./Shapes";
-import { CUTOUTS, IMAGES, STICKERS } from "@/lib/images";
+import { CUTOUTS, IMAGES } from "@/lib/images";
 import { BOOKING_HREF, CONTACT } from "@/lib/site";
 
 const SLIDES = IMAGES.heroSlides;
@@ -26,12 +26,6 @@ export default function Hero() {
       <div className="absolute -bottom-32 right-[30%] -z-10 h-80 w-80 animate-morph bg-[#4f5243] [animation-delay:-6s]" />
       <Paw className="absolute left-[44%] top-28 -z-10 hidden h-24 w-24 rotate-12 text-white/5 lg:block" />
       <Sparkle className="absolute left-[6%] top-32 h-5 w-5 animate-float text-[#f2c9a0]" />
-      <Cutout
-        {...STICKERS.corgi}
-        decorative
-        sizes="200px"
-        className="absolute bottom-24 left-[36%] -z-10 hidden h-48 w-40 rotate-[-8deg] opacity-90 lg:block"
-      />
       <Sparkle className="absolute bottom-44 left-[44%] hidden h-3 w-3 animate-float text-white/60 sm:block" />
 
       <div className="container-x relative grid items-center gap-12 pb-36 pt-32 lg:min-h-[820px] lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-36">
@@ -100,8 +94,8 @@ export default function Hero() {
           {/* Cut-out pup "stepping out" of the frame */}
           <Cutout
             {...CUTOUTS.pomeranian}
-            sizes="(min-width:640px) 260px, 180px"
-            className="absolute -bottom-12 -left-8 h-56 w-44 sm:-left-24 sm:h-80 sm:w-64"
+            sizes="(min-width:640px) 340px, 220px"
+            className="absolute -bottom-14 -left-8 h-64 w-52 sm:-left-36 sm:h-[26rem] sm:w-80 lg:-left-52"
           />
 
           <div className="absolute -bottom-6 -right-2 rotate-[-3deg] rounded-[28px_28px_28px_6px] bg-white px-5 py-4 text-foreground shadow-xl sm:-right-8">

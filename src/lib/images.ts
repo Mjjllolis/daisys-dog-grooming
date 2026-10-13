@@ -35,13 +35,21 @@ export const STICKERS = {
   jackRussell: sticker("jack-russell", "Jack Russell pup sticker"),
 };
 
-/** Gallery: one shot per dog (near-duplicate frames left out). */
-export const GALLERY: Img[] = [4296, 4358, 3812, 4061, 4405, 3938, 4340, 4088, 4230, 3836, 4452, 4316].map((n) =>
-  photo(n),
-);
-
+/**
+ * Every photo is used exactly once across the site — hero slideshow, services,
+ * faded section backdrops, then the gallery gets what's left.
+ */
 export const IMAGES = {
   heroSlides: [photo(4316), photo(4371), photo(4388), photo(3938), photo(4442)],
   about: { src: "/images/groomer.jpg", alt: "Your groomer at Daisy's Dog Grooming" },
   services: photo(4230, "Apricot doodle with a fresh teddy-bear face"),
 };
+
+export const BACKDROPS = {
+  pricing: photo(4296).src,
+  reviews: photo(4405).src,
+  faq: photo(4340).src,
+  offer: photo(4358).src,
+};
+
+export const GALLERY: Img[] = [3812, 4061, 3836, 4088, 4452, 4066].map((n) => photo(n));

@@ -1,6 +1,7 @@
 import Wave from "./Wave";
 import Cutout from "./Cutout";
-import { STICKERS } from "@/lib/images";
+import BgPhoto from "./BgPhoto";
+import { BACKDROPS, STICKERS } from "@/lib/images";
 import { CircleText, Daisy, Paw, Sparkle } from "./Shapes";
 import { ADD_ONS, PACKAGES, SIZE_COLUMNS, SIZE_PRICING } from "@/lib/services";
 import { BOOKING_HREF } from "@/lib/site";
@@ -8,12 +9,11 @@ import { BOOKING_HREF } from "@/lib/site";
 export default function Pricing() {
   return (
     <section id="pricing" className="relative">
-      <div className="relative overflow-hidden bg-forest pb-10 pt-20 text-center text-white sm:pt-24">
+      <div className="relative isolate overflow-hidden bg-forest pb-10 pt-20 text-center text-white sm:pt-24">
+        <BgPhoto src={BACKDROPS.pricing} tint opacity={0.22} className="inset-0" />
         <Paw className="absolute left-[6%] top-10 h-16 w-16 -rotate-12 text-white/10" />
         <Paw className="absolute left-[12%] top-28 h-10 w-10 rotate-12 text-white/10" />
         <Daisy className="absolute right-[8%] top-12 h-14 w-14 animate-float opacity-90" />
-        <Cutout {...STICKERS.doodle} decorative sizes="220px" className="absolute bottom-0 left-[14%] hidden h-52 w-40 -rotate-6 lg:block" />
-        <Cutout {...STICKERS.blackPoodle} decorative sizes="220px" className="absolute bottom-2 right-[14%] hidden h-52 w-40 rotate-6 lg:block" />
         <Sparkle className="absolute right-[18%] top-32 h-5 w-5 text-[#f2c9a0]" />
         <div className="container-x relative">
           <p className="eyebrow !text-[#f2c9a0] justify-center">Pricing</p>
@@ -30,7 +30,7 @@ export default function Pricing() {
           <p className="mt-3 text-sm text-muted">Starting prices for small pups. Final cost depends on size, coat and condition.</p>
         </div>
 
-        <div className="mt-52 grid gap-x-6 gap-y-52 md:grid-cols-3 md:items-end">
+        <div className="mt-72 grid gap-x-6 gap-y-72 md:grid-cols-3 md:items-end">
           {PACKAGES.map((p) => (
             <div
               key={p.name}
@@ -42,8 +42,8 @@ export default function Pricing() {
             >
               <Cutout
                 {...p.dog}
-                sizes="260px"
-                className={`absolute h-52 w-44 ${p.featured ? "-top-44 left-1/2 -translate-x-1/2" : "-top-[200px] left-4"}`}
+                sizes="360px"
+                className={`absolute h-72 w-64 ${p.featured ? "-top-[17rem] left-1/2 -translate-x-1/2" : "-top-[17.5rem] left-1/2 -translate-x-1/2"}`}
               />
               {p.featured && (
                 <div className="absolute -right-6 top-6 text-white">
@@ -77,14 +77,28 @@ export default function Pricing() {
         {/* Pricing by size */}
         <div className="relative mt-24 rounded-[3rem_3rem_3rem_3rem] bg-sage-soft/70 px-4 py-14 sm:rounded-[6rem_2rem_6rem_2rem] sm:px-10">
           <Paw className="absolute -top-6 right-10 h-14 w-14 rotate-12 text-accent" />
-          <Cutout {...STICKERS.aussie} decorative sizes="240px" className="absolute -bottom-10 -left-6 hidden h-56 w-44 -rotate-6 lg:block" />
-          <Cutout {...STICKERS.brownDog} decorative sizes="220px" className="absolute -right-6 top-24 hidden h-52 w-40 rotate-6 lg:block" />
           <div className="text-center">
             <p className="eyebrow justify-center">Pricing by Size</p>
             <h3 className="mt-3 text-3xl sm:text-4xl">
               Find your pup&apos;s <span className="italic text-accent">price</span>
             </h3>
             <p className="mt-3 text-sm text-muted">Starting prices by weight.</p>
+          </div>
+
+          {/* Size lineup: one pup per size, drawn roughly to scale */}
+          <div className="mx-auto mt-10 flex max-w-3xl items-end justify-center gap-2 sm:gap-8">
+            {SIZE_PRICING.map((row, i) => (
+              <div key={row.size} className="flex flex-col items-center">
+                <Cutout
+                  {...row.dog}
+                  sizes="(min-width:640px) 260px, 120px"
+                  className={["h-24 w-20 sm:h-40 sm:w-32", "h-32 w-24 sm:h-52 sm:w-40", "h-40 w-24 sm:h-64 sm:w-44", "h-48 w-28 sm:h-80 sm:w-48"][i]}
+                />
+                <span className="mt-2 rounded-full bg-surface px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-muted shadow-sm sm:text-[11px]">
+                  {row.size}
+                </span>
+              </div>
+            ))}
           </div>
 
           <div className="mx-auto mt-10 max-w-3xl">
@@ -97,14 +111,9 @@ export default function Pricing() {
             <div className="space-y-3">
               {SIZE_PRICING.map((row) => (
                 <div key={row.size} className="grid grid-cols-3 items-center gap-2 rounded-full bg-surface px-6 py-4 shadow-sm sm:px-10">
-                  <div className="flex items-center gap-3">
-                    <span className="relative hidden h-16 w-16 flex-none overflow-hidden rounded-full bg-sage-soft sm:block">
-                      <Cutout {...row.dog} sizes="96px" className="absolute inset-1" />
-                    </span>
-                    <span>
-                      <span className="block font-serif text-lg sm:text-xl">{row.size}</span>
-                      <span className="block text-xs text-muted">{row.weight}</span>
-                    </span>
+                  <div>
+                    <p className="font-serif text-lg sm:text-xl">{row.size}</p>
+                    <p className="text-xs text-muted">{row.weight}</p>
                   </div>
                   {row.prices.map((price, i) => (
                     <p key={i} className="text-center font-serif text-lg text-accent sm:text-xl">
@@ -118,10 +127,13 @@ export default function Pricing() {
           </div>
 
           {/* Add-ons as pill "tags" */}
-          <div className="mx-auto mt-14 max-w-3xl text-center">
-            <p className="eyebrow justify-center">Finishing Touches</p>
+          <div className="mx-auto mt-16 grid max-w-4xl items-center gap-6 lg:grid-cols-[auto_1fr]">
+            {/* Party-hat pup = bows, heart tails and other finishing touches */}
+            <Cutout {...STICKERS.shihTzu} decorative sizes="(min-width:1024px) 320px, 220px" className="mx-auto h-64 w-52 -rotate-6 lg:h-80 lg:w-64" />
+            <div className="text-center lg:text-left">
+            <p className="eyebrow justify-center lg:justify-start">Finishing Touches</p>
             <h4 className="mt-3 text-2xl sm:text-3xl">Add-ons &amp; extras</h4>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start">
               {ADD_ONS.map((a, i) => (
                 <span
                   key={a.name}
@@ -133,6 +145,7 @@ export default function Pricing() {
                   <span className="font-serif text-accent">{a.price}</span>
                 </span>
               ))}
+            </div>
             </div>
           </div>
         </div>

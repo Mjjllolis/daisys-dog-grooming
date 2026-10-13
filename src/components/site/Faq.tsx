@@ -1,11 +1,13 @@
 import Cutout from "./Cutout";
-import { STICKERS } from "@/lib/images";
+import BgPhoto from "./BgPhoto";
+import { BACKDROPS, STICKERS } from "@/lib/images";
 import { FAQS } from "@/lib/faqs";
 import { CONTACT } from "@/lib/site";
 
 export default function Faq() {
   return (
-    <section className="bg-sage-soft/60 py-20 sm:py-28">
+    <section className="relative isolate overflow-hidden bg-sage-soft/60 py-20 sm:py-28">
+      <BgPhoto src={BACKDROPS.faq} opacity={0.12} fade="right" className="inset-y-0 left-0 w-1/2" />
       <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
         <div>
           <p className="eyebrow">FAQ</p>
@@ -16,12 +18,10 @@ export default function Faq() {
           <a href={`mailto:${CONTACT.email}`} className="btn-outline mt-8">
             Contact Us
           </a>
-          <div className="mt-10 hidden items-end gap-2 lg:flex">
-            <Cutout {...STICKERS.shihTzu} decorative sizes="260px" className="h-64 w-52 -rotate-6" />
-            <Cutout {...STICKERS.corgi} decorative sizes="220px" className="h-52 w-40 rotate-6" />
-          </div>
+          {/* Curious head-tilt pup for the questions section */}
+          <Cutout {...STICKERS.brownDog} decorative sizes="360px" className="mt-10 hidden h-96 w-72 -rotate-3 lg:block" />
         </div>
-        <div className="divide-y divide-border rounded-3xl bg-surface px-6 sm:px-8">
+        <div className="self-start divide-y divide-border rounded-3xl bg-surface px-6 sm:px-8">
           {FAQS.map((f, i) => (
             <details key={f.q} className="group py-5" open={i === 0}>
               <summary className="flex cursor-pointer list-none items-center gap-4 font-serif text-lg text-foreground marker:hidden group-open:text-accent sm:text-xl [&::-webkit-details-marker]:hidden">

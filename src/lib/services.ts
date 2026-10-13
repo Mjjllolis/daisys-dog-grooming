@@ -54,7 +54,7 @@ export const PACKAGES: Package[] = [
   },
   {
     name: "Nail Trim",
-    dog: CUTOUTS.pomeranian,
+    dog: CUTOUTS.charcoal,
     blurb: "Quick in-and-out",
     from: 20,
     features: ["Nail trim only", "About 10 minutes", "Add a nail grind +$5", "Any size pup"],
