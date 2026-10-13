@@ -9,7 +9,7 @@ import { BOOKING_HREF } from "@/lib/site";
 export default function Pricing() {
   return (
     <section id="pricing" className="relative">
-      <div className="relative isolate overflow-hidden bg-forest pb-10 pt-20 text-center text-white sm:pt-24">
+      <div className="relative isolate overflow-hidden bg-forest pb-28 pt-20 text-center text-white sm:pb-36 sm:pt-24">
         <BgPhoto src={BACKDROPS.pricing} tint opacity={0.22} className="inset-0" />
         <Paw className="absolute left-[6%] top-10 h-16 w-16 -rotate-12 text-white/10" />
         <Paw className="absolute left-[12%] top-28 h-10 w-10 rotate-12 text-white/10" />
@@ -20,13 +20,12 @@ export default function Pricing() {
           <h2 className="mt-4 text-4xl sm:text-5xl">Simple, honest pricing</h2>
           <p className="mt-4 text-white/75">Clear starting prices, by size. No surprises.</p>
         </div>
+        <Wave fill="rgb(var(--background))" className="absolute inset-x-0 -bottom-px" />
       </div>
-      <Wave fill="rgb(var(--background))" className="-mt-px bg-forest" />
 
       <div className="container-x pb-20 pt-6 sm:pb-28">
         <div className="text-center">
           <p className="eyebrow justify-center">Packages</p>
-          <h3 className="mt-3 text-3xl sm:text-4xl">Simple, transparent packages</h3>
           <p className="mt-3 text-sm text-muted">Starting prices for small pups. Final cost depends on size, coat and condition.</p>
         </div>
 
