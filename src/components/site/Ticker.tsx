@@ -51,9 +51,9 @@ export default function Ticker() {
   return (
     <div className="relative -mt-4 overflow-hidden" aria-label={TICKER.join(", ")}>
       <svg
-        viewBox="0 0 1440 220"
+        viewBox="0 0 1440 230"
         preserveAspectRatio="xMidYMid slice"
-        className="block h-[170px] w-full sm:h-[220px]"
+        className="block aspect-[1440/230] min-h-[170px] w-full"
         aria-hidden
       >
         <Ribbon id="wave-back" dy={46} band="rgb(var(--sage))" ink="rgb(var(--forest))" reverse dur="60s" />

@@ -42,13 +42,13 @@ export default function Offer() {
         </div>
 
         {/* Dog parade standing on the footer edge */}
-        <div className="relative mx-auto mt-14 flex max-w-5xl items-end justify-center gap-0 px-4 sm:gap-2">
-          <Cutout {...CUTOUTS.charcoal} sizes="220px" className="hidden h-28 w-40 md:block" />
-          <Cutout {...CUTOUTS.maltese} sizes="200px" className="h-32 w-28 sm:h-40 sm:w-36" />
-          <Cutout {...CUTOUTS.chocolateDoodle} sizes="200px" className="h-44 w-28 sm:h-56 sm:w-36" />
-          <Cutout {...CUTOUTS.tricolor} sizes="200px" className="h-40 w-28 sm:h-52 sm:w-36" />
-          <Cutout {...CUTOUTS.toy} sizes="180px" className="hidden h-36 w-28 sm:block" />
-          <Cutout {...CUTOUTS.sitting} sizes="180px" className="hidden h-40 w-32 md:block" />
+        <div className="relative mx-auto mt-14 flex max-w-6xl items-end justify-center px-2">
+          <Cutout {...CUTOUTS.charcoal} sizes="300px" className="hidden h-40 w-56 md:block" />
+          <Cutout {...CUTOUTS.maltese} sizes="260px" className="h-40 w-36 sm:h-56 sm:w-48" />
+          <Cutout {...CUTOUTS.chocolateDoodle} sizes="260px" className="h-56 w-36 sm:h-80 sm:w-48" />
+          <Cutout {...CUTOUTS.tricolor} sizes="260px" className="h-52 w-36 sm:h-72 sm:w-48" />
+          <Cutout {...CUTOUTS.toy} sizes="240px" className="hidden h-52 w-40 sm:block" />
+          <Cutout {...CUTOUTS.pomeranian} sizes="240px" className="hidden h-56 w-44 lg:block" />
         </div>
       </div>
     </section>

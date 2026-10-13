@@ -13,7 +13,7 @@ const cutout = (name: string, alt: string): Img => ({ src: `/images/cutouts/${na
 const sticker = (name: string, alt: string): Img => ({ src: `/images/stickers/${name}.webp`, alt });
 
 export const CUTOUTS = {
-  daisy: cutout("daisy-dachshund", "Daisy, a speckled dachshund mix"),
+  dachshund: cutout("daisy-dachshund", "Speckled dachshund mix lounging"),
   toy: cutout("curious-fluffy-toy", "Fluffy little toy-breed pup"),
   charcoal: cutout("fluffy-charcoal", "Fluffy charcoal pup lying down"),
   maltese: cutout("fluffy-maltese", "Happy white Maltese with a wagging tail"),

@@ -17,8 +17,8 @@ export default function Faq() {
             Contact Us
           </a>
           <div className="mt-10 hidden items-end gap-2 lg:flex">
-            <Cutout {...STICKERS.shihTzu} decorative sizes="180px" className="h-44 w-36 -rotate-6" />
-            <Cutout {...STICKERS.brownDog} decorative sizes="160px" className="h-36 w-28 rotate-6" />
+            <Cutout {...STICKERS.shihTzu} decorative sizes="260px" className="h-64 w-52 -rotate-6" />
+            <Cutout {...STICKERS.corgi} decorative sizes="220px" className="h-52 w-40 rotate-6" />
           </div>
         </div>
         <div className="divide-y divide-border rounded-3xl bg-surface px-6 sm:px-8">

@@ -21,8 +21,8 @@ export default function Gallery() {
           <Cutout
             {...STICKERS.blackPoodle}
             decorative
-            sizes="140px"
-            className="absolute -right-24 bottom-0 hidden h-24 w-20 rotate-12 sm:block"
+            sizes="200px"
+            className="absolute -right-36 -bottom-4 hidden h-40 w-32 rotate-12 sm:block"
           />
           <p className="eyebrow">Fresh Off the Table</p>
           <h2 className="mt-4 text-4xl sm:text-5xl">
@@ -34,19 +34,19 @@ export default function Gallery() {
         </a>
       </div>
 
-      <div className="relative mt-14 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+      <div className="relative mt-14 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:gap-8">
         {GALLERY.map((img, i) => (
           <div
             key={img.src}
             className={`group relative aspect-[3/4] overflow-hidden bg-sage-soft ${SHAPES[i % SHAPES.length]} ${
-              i % 2 ? "lg:translate-y-10" : ""
+              i % 3 === 1 ? "md:translate-y-12" : ""
             }`}
           >
             <Image
               src={img.src}
               alt={img.alt}
               fill
-              sizes="(min-width:1024px) 22vw, (min-width:768px) 30vw, 45vw"
+              sizes="(min-width:768px) 30vw, 48vw"
               className="object-cover object-[center_70%] transition duration-500 group-hover:scale-105"
             />
           </div>

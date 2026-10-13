@@ -2,7 +2,7 @@ import Image from "next/image";
 import CheckList from "./CheckList";
 import Cutout from "./Cutout";
 import { ArcText, Daisy, Paw, Sparkle } from "./Shapes";
-import { IMAGES, STICKERS } from "@/lib/images";
+import { CUTOUTS, IMAGES, STICKERS } from "@/lib/images";
 import { SERVICE_POINTS } from "@/lib/services";
 import { BOOKING_HREF } from "@/lib/site";
 
@@ -10,6 +10,11 @@ export default function Services() {
   return (
     <section id="services" className="relative overflow-hidden bg-sage-soft/60 py-20 sm:py-28">
       <Paw className="absolute -left-10 top-10 h-40 w-40 -rotate-12 text-sage/30" />
+      <Cutout
+        {...CUTOUTS.charcoal}
+        sizes="300px"
+        className="absolute bottom-6 left-[38%] hidden h-40 w-56 lg:block"
+      />
       <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="order-2 lg:order-1">
           <p className="eyebrow">Dog Grooming</p>
@@ -36,7 +41,7 @@ export default function Services() {
             </a>
           </div>
         </div>
-        <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-lg">
+        <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-xl">
           <ArcText id="services-arc" text="fresh · fluffy · happy" className="mx-auto -mb-6 text-accent" width={380} />
           <div className="relative aspect-square">
             <div className="absolute inset-[-6%] animate-spin-slow rounded-full border-2 border-dashed border-accent/40" />
@@ -48,8 +53,8 @@ export default function Services() {
             <Cutout
               {...STICKERS.doodleSparkles}
               decorative
-              sizes="180px"
-              className="absolute -bottom-8 -left-6 h-40 w-32 -rotate-6 animate-float [--r:-6deg] sm:-left-12 sm:h-48 sm:w-40"
+              sizes="(min-width:640px) 240px, 170px"
+              className="absolute -bottom-10 -left-6 h-52 w-40 animate-float [--r:-6deg] sm:-left-16 sm:h-72 sm:w-56"
             />
             <Sparkle className="absolute -right-4 top-1/3 h-6 w-6 text-forest" />
           </div>

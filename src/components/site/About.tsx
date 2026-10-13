@@ -2,7 +2,7 @@ import Image from "next/image";
 import CheckList from "./CheckList";
 import Cutout from "./Cutout";
 import { CircleText, Daisy, Paw, Sparkle } from "./Shapes";
-import { CUTOUTS, IMAGES } from "@/lib/images";
+import { CUTOUTS, IMAGES, STICKERS } from "@/lib/images";
 import { ABOUT_POINTS } from "@/lib/services";
 
 export default function About() {
@@ -22,21 +22,24 @@ export default function About() {
         <div className="relative aspect-[4/5] overflow-hidden rounded-t-full bg-sage-soft shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]">
           <Image src={IMAGES.about.src} alt={IMAGES.about.alt} fill sizes="(min-width:1024px) 40vw, 90vw" className="object-cover object-top" />
         </div>
-        {/* Say hi to Daisy */}
-        <div className="absolute -bottom-12 -left-4 z-20 sm:-left-16">
-          <p className="mb-1 ml-10 flex -rotate-6 items-center gap-1 font-serif text-xl italic text-accent">
-            Say hi to Daisy
-            <Paw className="h-4 w-4" />
-          </p>
-          <Cutout {...CUTOUTS.daisy} sizes="260px" className="h-36 w-52 sm:h-40 sm:w-60" />
-        </div>
+        <Cutout
+          {...CUTOUTS.dachshund}
+          sizes="(min-width:640px) 360px, 260px"
+          className="absolute -bottom-14 -left-6 z-20 h-44 w-64 sm:-left-20 sm:h-56 sm:w-80"
+        />
         <div className="absolute -bottom-6 -right-2 hidden rounded-[40px_40px_40px_8px] sm:block bg-forest px-6 py-5 text-white shadow-xl sm:-right-6">
           <p className="font-serif text-3xl">1 : 1</p>
           <p className="text-xs uppercase tracking-widest text-white/70">One groomer, one pup</p>
         </div>
       </div>
 
-      <div>
+      <div className="relative">
+        <Cutout
+          {...STICKERS.jackRussell}
+          decorative
+          sizes="200px"
+          className="absolute -bottom-16 right-0 hidden h-48 w-40 rotate-6 lg:block"
+        />
         <p className="eyebrow">About Us</p>
         <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
           A calm, cozy space where every pup is{" "}

@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import Wave from "./Wave";
 import Cutout from "./Cutout";
 import { CircleText, Daisy, Paw, Sparkle, Squiggle } from "./Shapes";
-import { CUTOUTS, IMAGES } from "@/lib/images";
+import { CUTOUTS, IMAGES, STICKERS } from "@/lib/images";
 import { BOOKING_HREF, CONTACT } from "@/lib/site";
 
 const SLIDES = IMAGES.heroSlides;
@@ -26,6 +26,12 @@ export default function Hero() {
       <div className="absolute -bottom-32 right-[30%] -z-10 h-80 w-80 animate-morph bg-[#4f5243] [animation-delay:-6s]" />
       <Paw className="absolute left-[44%] top-28 -z-10 hidden h-24 w-24 rotate-12 text-white/5 lg:block" />
       <Sparkle className="absolute left-[6%] top-32 h-5 w-5 animate-float text-[#f2c9a0]" />
+      <Cutout
+        {...STICKERS.corgi}
+        decorative
+        sizes="200px"
+        className="absolute bottom-24 left-[36%] -z-10 hidden h-48 w-40 rotate-[-8deg] opacity-90 lg:block"
+      />
       <Sparkle className="absolute bottom-44 left-[44%] hidden h-3 w-3 animate-float text-white/60 sm:block" />
 
       <div className="container-x relative grid items-center gap-12 pb-36 pt-32 lg:min-h-[820px] lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pt-36">
@@ -59,7 +65,7 @@ export default function Hero() {
         </div>
 
         {/* Arched photo frame with crossfading real grooms */}
-        <div className="relative mx-auto w-full max-w-[420px] lg:mr-0">
+        <div className="relative mx-auto w-full max-w-[440px] lg:mr-0 lg:max-w-[500px]">
           <div className="absolute inset-0 translate-x-5 translate-y-5 rounded-t-full rounded-b-[2.5rem] border-2 border-[#f2c9a0]/50" />
           <div className="relative aspect-[3/4] overflow-hidden rounded-t-full rounded-b-[2.5rem] bg-[#4f5243] shadow-2xl">
             {SLIDES.map((slide, i) => (
@@ -69,7 +75,7 @@ export default function Hero() {
                 alt={slide.alt}
                 fill
                 priority={i === 0}
-                sizes="(min-width:1024px) 420px, 90vw"
+                sizes="(min-width:1024px) 500px, 90vw"
                 className={`object-cover object-[center_70%] transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
               />
             ))}
@@ -94,8 +100,8 @@ export default function Hero() {
           {/* Cut-out pup "stepping out" of the frame */}
           <Cutout
             {...CUTOUTS.pomeranian}
-            sizes="220px"
-            className="absolute -bottom-10 -left-10 h-44 w-36 sm:-left-20 sm:h-56 sm:w-44"
+            sizes="(min-width:640px) 260px, 180px"
+            className="absolute -bottom-12 -left-8 h-56 w-44 sm:-left-24 sm:h-80 sm:w-64"
           />
 
           <div className="absolute -bottom-6 -right-2 rotate-[-3deg] rounded-[28px_28px_28px_6px] bg-white px-5 py-4 text-foreground shadow-xl sm:-right-8">
@@ -118,7 +124,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <Wave className="absolute inset-x-0 bottom-0" />
+      <Wave className="absolute inset-x-0 -bottom-px" />
     </section>
   );
 }
