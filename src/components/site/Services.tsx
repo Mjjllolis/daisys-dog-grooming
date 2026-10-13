@@ -1,7 +1,8 @@
 import Image from "next/image";
 import CheckList from "./CheckList";
+import Cutout from "./Cutout";
 import { ArcText, Daisy, Paw, Sparkle } from "./Shapes";
-import { IMAGES } from "@/lib/images";
+import { IMAGES, STICKERS } from "@/lib/images";
 import { SERVICE_POINTS } from "@/lib/services";
 import { BOOKING_HREF } from "@/lib/site";
 
@@ -44,6 +45,12 @@ export default function Services() {
             </div>
             <Daisy className="absolute -left-3 top-8 h-16 w-16 animate-float" />
             <Daisy className="absolute bottom-6 right-0 h-10 w-10 animate-float [animation-delay:-3s]" petal="#ffffff" center="#c0664a" />
+            <Cutout
+              {...STICKERS.doodleSparkles}
+              decorative
+              sizes="180px"
+              className="absolute -bottom-8 -left-6 h-40 w-32 -rotate-6 animate-float [--r:-6deg] sm:-left-12 sm:h-48 sm:w-40"
+            />
             <Sparkle className="absolute -right-4 top-1/3 h-6 w-6 text-forest" />
           </div>
         </div>

@@ -1,3 +1,5 @@
+import { CUTOUTS } from "./images";
+
 /** Services + prices, verbatim from Daisy's Groomore booking page. */
 
 export const TICKER = [
@@ -26,6 +28,8 @@ export const SERVICE_POINTS = [
 
 export type Package = {
   name: string;
+  /** Cut-out dog that peeks over the top of the card (see lib/images.ts). */
+  dog: { src: string; alt: string };
   blurb: string;
   from: number;
   features: string[];
@@ -35,12 +39,14 @@ export type Package = {
 export const PACKAGES: Package[] = [
   {
     name: "Bath",
+    dog: CUTOUTS.maltese,
     blurb: "A fresh, clean refresh",
     from: 45,
     features: ["Bath & dry", "Nail trim", "1 – 2 hours", "Priced by weight"],
   },
   {
     name: "Full Groom",
+    dog: CUTOUTS.goldenDoodle,
     blurb: "Our signature service",
     from: 65,
     featured: true,
@@ -48,6 +54,7 @@ export const PACKAGES: Package[] = [
   },
   {
     name: "Nail Trim",
+    dog: CUTOUTS.pomeranian,
     blurb: "Quick in-and-out",
     from: 20,
     features: ["Nail trim only", "About 10 minutes", "Add a nail grind +$5", "Any size pup"],
@@ -56,10 +63,10 @@ export const PACKAGES: Package[] = [
 
 /** Columns: Bath, Full Groom. `plus` = "starts at" pricing. */
 export const SIZE_PRICING = [
-  { size: "Small", weight: "0 – 20 lb", prices: [45, 65], plus: true },
-  { size: "Medium", weight: "21 – 45 lb", prices: [55, 85], plus: true },
-  { size: "Large", weight: "45 – 99 lb", prices: [70, 120], plus: true },
-  { size: "Extra large", weight: "100 lb +", prices: [85, 135], plus: false },
+  { size: "Small", dog: CUTOUTS.toy, weight: "0 – 20 lb", prices: [45, 65], plus: true },
+  { size: "Medium", dog: CUTOUTS.sitting, weight: "21 – 45 lb", prices: [55, 85], plus: true },
+  { size: "Large", dog: CUTOUTS.tricolor, weight: "45 – 99 lb", prices: [70, 120], plus: true },
+  { size: "Extra large", dog: CUTOUTS.chocolateDoodle, weight: "100 lb +", prices: [85, 135], plus: false },
 ];
 export const SIZE_COLUMNS = ["Bath", "Full Groom"];
 

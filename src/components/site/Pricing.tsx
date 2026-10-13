@@ -1,4 +1,5 @@
 import Wave from "./Wave";
+import Cutout from "./Cutout";
 import { CircleText, Daisy, Paw, Sparkle } from "./Shapes";
 import { ADD_ONS, PACKAGES, SIZE_COLUMNS, SIZE_PRICING } from "@/lib/services";
 import { BOOKING_HREF } from "@/lib/site";
@@ -26,7 +27,7 @@ export default function Pricing() {
           <p className="mt-3 text-sm text-muted">Starting prices for small pups. Final cost depends on size, coat and condition.</p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3 md:items-center">
+        <div className="mt-40 grid gap-x-6 gap-y-40 md:grid-cols-3 md:items-end">
           {PACKAGES.map((p) => (
             <div
               key={p.name}
@@ -36,8 +37,13 @@ export default function Pricing() {
                   : "rounded-[32px] border border-border bg-surface shadow-[0_20px_40px_-30px_rgba(0,0,0,0.25)]"
               }`}
             >
+              <Cutout
+                {...p.dog}
+                sizes="200px"
+                className={`absolute h-36 w-32 ${p.featured ? "-top-32 left-1/2 -translate-x-1/2 sm:h-40" : "-top-[136px] left-6"}`}
+              />
               {p.featured && (
-                <div className="absolute -right-6 -top-10 text-white">
+                <div className="absolute -right-6 top-6 text-white">
                   <CircleText id="popular-badge" text="Most popular ✦ most popular ✦ " size={104} textClass="fill-white">
                     <span className="absolute inset-0 -z-10 m-auto h-[104px] w-[104px] rounded-full bg-accent shadow-lg" />
                     <Daisy className="h-9 w-9" />
@@ -86,9 +92,14 @@ export default function Pricing() {
             <div className="space-y-3">
               {SIZE_PRICING.map((row) => (
                 <div key={row.size} className="grid grid-cols-3 items-center gap-2 rounded-full bg-surface px-6 py-4 shadow-sm sm:px-10">
-                  <div>
-                    <p className="font-serif text-lg sm:text-xl">{row.size}</p>
-                    <p className="text-xs text-muted">{row.weight}</p>
+                  <div className="flex items-center gap-3">
+                    <span className="relative hidden h-12 w-12 flex-none overflow-hidden rounded-full bg-sage-soft sm:block">
+                      <Cutout {...row.dog} sizes="64px" className="absolute inset-1" />
+                    </span>
+                    <span>
+                      <span className="block font-serif text-lg sm:text-xl">{row.size}</span>
+                      <span className="block text-xs text-muted">{row.weight}</span>
+                    </span>
                   </div>
                   {row.prices.map((price, i) => (
                     <p key={i} className="text-center font-serif text-lg text-accent sm:text-xl">

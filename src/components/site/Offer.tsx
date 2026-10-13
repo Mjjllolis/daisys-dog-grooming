@@ -1,4 +1,6 @@
 import Wave from "./Wave";
+import Cutout from "./Cutout";
+import { CUTOUTS } from "@/lib/images";
 import { ArcText, CircleText, Daisy, Paw, Sparkle } from "./Shapes";
 import { BOOKING_HREF, CONTACT, PORTAL_HREF } from "@/lib/site";
 
@@ -6,7 +8,7 @@ export default function Offer() {
   return (
     <section id="book" className="relative bg-background">
       <Wave fill="rgb(var(--forest))" />
-      <div className="relative overflow-hidden bg-forest pb-24 pt-10 text-center text-white sm:pt-14">
+      <div className="relative overflow-hidden bg-forest pt-10 text-center text-white sm:pt-14">
         <Daisy className="absolute left-[7%] top-16 h-16 w-16 animate-float" />
         <Daisy className="absolute left-[16%] bottom-20 h-9 w-9 animate-float [animation-delay:-2s]" petal="#f2c9a0" center="#c0664a" />
         <Daisy className="absolute right-[10%] bottom-24 h-12 w-12 animate-float [animation-delay:-4s]" />
@@ -37,6 +39,16 @@ export default function Offer() {
               Client Login
             </a>
           </div>
+        </div>
+
+        {/* Dog parade standing on the footer edge */}
+        <div className="relative mx-auto mt-14 flex max-w-5xl items-end justify-center gap-0 px-4 sm:gap-2">
+          <Cutout {...CUTOUTS.charcoal} sizes="220px" className="hidden h-28 w-40 md:block" />
+          <Cutout {...CUTOUTS.maltese} sizes="200px" className="h-32 w-28 sm:h-40 sm:w-36" />
+          <Cutout {...CUTOUTS.chocolateDoodle} sizes="200px" className="h-44 w-28 sm:h-56 sm:w-36" />
+          <Cutout {...CUTOUTS.tricolor} sizes="200px" className="h-40 w-28 sm:h-52 sm:w-36" />
+          <Cutout {...CUTOUTS.toy} sizes="180px" className="hidden h-36 w-28 sm:block" />
+          <Cutout {...CUTOUTS.sitting} sizes="180px" className="hidden h-40 w-32 md:block" />
         </div>
       </div>
     </section>

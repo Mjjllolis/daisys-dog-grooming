@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import Wave from "./Wave";
+import Cutout from "./Cutout";
 import { CircleText, Daisy, Paw, Sparkle, Squiggle } from "./Shapes";
-import { IMAGES } from "@/lib/images";
+import { CUTOUTS, IMAGES } from "@/lib/images";
 import { BOOKING_HREF, CONTACT } from "@/lib/site";
 
 const SLIDES = IMAGES.heroSlides;
@@ -89,6 +90,13 @@ export default function Hero() {
           </a>
 
           <Daisy className="absolute -right-5 top-1/3 h-12 w-12 animate-float" />
+
+          {/* Cut-out pup "stepping out" of the frame */}
+          <Cutout
+            {...CUTOUTS.pomeranian}
+            sizes="220px"
+            className="absolute -bottom-10 -left-10 h-44 w-36 sm:-left-20 sm:h-56 sm:w-44"
+          />
 
           <div className="absolute -bottom-6 -right-2 rotate-[-3deg] rounded-[28px_28px_28px_6px] bg-white px-5 py-4 text-foreground shadow-xl sm:-right-8">
             <p className="font-serif text-lg">

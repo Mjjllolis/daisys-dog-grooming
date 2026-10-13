@@ -1,7 +1,8 @@
 import Image from "next/image";
 import CheckList from "./CheckList";
+import Cutout from "./Cutout";
 import { CircleText, Daisy, Paw, Sparkle } from "./Shapes";
-import { IMAGES } from "@/lib/images";
+import { CUTOUTS, IMAGES } from "@/lib/images";
 import { ABOUT_POINTS } from "@/lib/services";
 
 export default function About() {
@@ -10,8 +11,6 @@ export default function About() {
       <div className="relative mx-auto w-full max-w-md lg:max-w-none">
         <div className="absolute -left-8 -top-8 h-[85%] w-[90%] animate-morph bg-sage/40" />
         <div className="absolute -bottom-10 right-6 h-40 w-40 animate-morph rounded-full bg-accent/15 [animation-delay:-5s]" />
-        <Paw className="absolute -left-4 bottom-24 h-10 w-10 -rotate-12 text-accent/70" />
-        <Paw className="absolute -left-10 bottom-8 h-7 w-7 rotate-12 text-accent/40" />
         <Daisy className="absolute -top-4 right-10 z-10 h-14 w-14 animate-float" petal="#ffffff" />
         <div className="absolute -left-6 top-1/3 z-10 hidden sm:block">
           <CircleText id="about-badge" text="Pet-first ✦ fear-free ✦ cage-free ✦ " size={130} textClass="fill-forest">
@@ -23,7 +22,15 @@ export default function About() {
         <div className="relative aspect-[4/5] overflow-hidden rounded-t-full bg-sage-soft shadow-[0_30px_60px_-30px_rgba(62,75,58,0.5)]">
           <Image src={IMAGES.about.src} alt={IMAGES.about.alt} fill sizes="(min-width:1024px) 40vw, 90vw" className="object-cover object-top" />
         </div>
-        <div className="absolute -bottom-6 -right-2 rounded-[40px_40px_40px_8px] bg-forest px-6 py-5 text-white shadow-xl sm:-right-6">
+        {/* Say hi to Daisy */}
+        <div className="absolute -bottom-12 -left-4 z-20 sm:-left-16">
+          <p className="mb-1 ml-10 flex -rotate-6 items-center gap-1 font-serif text-xl italic text-accent">
+            Say hi to Daisy
+            <Paw className="h-4 w-4" />
+          </p>
+          <Cutout {...CUTOUTS.daisy} sizes="260px" className="h-36 w-52 sm:h-40 sm:w-60" />
+        </div>
+        <div className="absolute -bottom-6 -right-2 hidden rounded-[40px_40px_40px_8px] sm:block bg-forest px-6 py-5 text-white shadow-xl sm:-right-6">
           <p className="font-serif text-3xl">1 : 1</p>
           <p className="text-xs uppercase tracking-widest text-white/70">One groomer, one pup</p>
         </div>

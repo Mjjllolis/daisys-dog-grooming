@@ -1,18 +1,47 @@
 /**
- * Every photo on the site is referenced from here. Dog photos are Daisy's own
- * (from the Groomore booking page banner); groomer.jpg is the Facebook profile photo.
+ * Every image on the site is referenced from here. All dog imagery is Daisy's
+ * own (supplied "Web Ready" set): table photos, transparent cut-outs and
+ * illustrated stickers. groomer.jpg is the Facebook profile photo.
  */
-export const DOGS = [
-  { src: "/images/pomeranian.jpg", alt: "Fluffy Pomeranian after a full groom at Daisy's", name: "Pomeranian" },
-  { src: "/images/doodle-cream.jpg", alt: "Cream doodle with a fresh teddy-bear cut", name: "Doodle" },
-  { src: "/images/schnauzer.jpg", alt: "Miniature Schnauzer with a classic schnauzer trim", name: "Schnauzer" },
-  { src: "/images/doodle-red.jpg", alt: "Red doodle freshly groomed on the table", name: "Red doodle" },
-  { src: "/images/yorkie.jpg", alt: "Yorkie with a tidy puppy cut", name: "Yorkie" },
-  { src: "/images/maltese.jpg", alt: "Little white pup with a short summer cut", name: "Maltese mix" },
-];
+type Img = { src: string; alt: string };
+
+const photo = (n: number, alt = "Freshly groomed pup on the table at Daisy's"): Img => ({
+  src: `/images/photos/img-${n}.webp`,
+  alt,
+});
+const cutout = (name: string, alt: string): Img => ({ src: `/images/cutouts/${name}.webp`, alt });
+const sticker = (name: string, alt: string): Img => ({ src: `/images/stickers/${name}.webp`, alt });
+
+export const CUTOUTS = {
+  daisy: cutout("daisy-dachshund", "Daisy, a speckled dachshund mix"),
+  toy: cutout("curious-fluffy-toy", "Fluffy little toy-breed pup"),
+  charcoal: cutout("fluffy-charcoal", "Fluffy charcoal pup lying down"),
+  maltese: cutout("fluffy-maltese", "Happy white Maltese with a wagging tail"),
+  pomeranian: cutout("fluffy-pomeranian", "Fluffy cream Pomeranian"),
+  sitting: cutout("fluffy-sitting", "Freshly groomed pup sitting pretty"),
+  tricolor: cutout("friendly-tricolor", "Friendly tricolor pup"),
+  goldenDoodle: cutout("golden-brown-doodle", "Golden-brown doodle sitting tall"),
+  chocolateDoodle: cutout("seated-chocolate-doodle", "Chocolate doodle sitting"),
+};
+
+export const STICKERS = {
+  aussie: sticker("aussie", "Cheeky Aussie sticker with hearts"),
+  blackPoodle: sticker("black-poodle", "Black poodle sticker"),
+  corgi: sticker("corgi", "Corgi sticker"),
+  shihTzu: sticker("shih-tzu-party", "Shih Tzu in a party hat sticker"),
+  brownDog: sticker("brown-dog", "Brown and white doodle sticker"),
+  doodle: sticker("doodle", "Doodle portrait sticker"),
+  doodleSparkles: sticker("doodle-sparkles", "Freshly groomed doodle sticker with sparkles"),
+  jackRussell: sticker("jack-russell", "Jack Russell pup sticker"),
+};
+
+/** Gallery: one shot per dog (near-duplicate frames left out). */
+export const GALLERY: Img[] = [4296, 4358, 3812, 4061, 4405, 3938, 4340, 4088, 4230, 3836, 4452, 4316].map((n) =>
+  photo(n),
+);
 
 export const IMAGES = {
-  heroSlides: [DOGS[0], DOGS[1], DOGS[3], DOGS[2]],
+  heroSlides: [photo(4316), photo(4371), photo(4388), photo(3938), photo(4442)],
   about: { src: "/images/groomer.jpg", alt: "Your groomer at Daisy's Dog Grooming" },
-  services: DOGS[4],
+  services: photo(4230, "Apricot doodle with a fresh teddy-bear face"),
 };
