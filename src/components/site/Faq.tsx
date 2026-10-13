@@ -6,7 +6,7 @@ export default function Faq() {
     <section className="bg-sage-soft/60 py-20 sm:py-28">
       <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
         <div>
-          <p className="eyebrow">Pricing FAQ</p>
+          <p className="eyebrow">FAQ</p>
           <h2 className="mt-4 text-4xl sm:text-5xl">Good to know</h2>
           <p className="mt-5 max-w-sm leading-relaxed text-muted">
             Can&apos;t find what you need? Reach out and we&apos;ll be happy to help.

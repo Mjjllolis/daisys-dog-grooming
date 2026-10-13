@@ -1,18 +1,18 @@
-// Placeholder reviews — replace with real Google reviews before launch.
+// TODO: PLACEHOLDER reviews — replace with real Google/Facebook reviews before launch.
 export const TESTIMONIALS = [
   {
-    quote: "Our anxious rescue actually wags his way through the door now. Daisy's team is endlessly patient.",
-    name: "Jordan P.",
-    pet: "Biscuit, Terrier mix",
+    quote: "Our anxious rescue actually wags his way through the door now. So patient and gentle with him.",
+    name: "Client name",
+    pet: "Placeholder review",
   },
   {
-    quote: "Best doodle cut we've ever had — even, fluffy, and exactly what I asked for. Smelled amazing for a week.",
-    name: "Alicia M.",
-    pet: "Waffles, Goldendoodle",
+    quote: "Best doodle cut we've ever had — even, fluffy, and exactly what I asked for.",
+    name: "Client name",
+    pet: "Placeholder review",
   },
   {
-    quote: "Calm, clean and so personal. You can tell they genuinely love every dog that comes in.",
-    name: "Chris T.",
-    pet: "Luna, Shih Tzu",
+    quote: "Calm, clean and so personal. You can tell every dog gets real one-on-one attention.",
+    name: "Client name",
+    pet: "Placeholder review",
   },
 ];

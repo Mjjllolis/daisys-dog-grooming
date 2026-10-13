@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { NAV } from "@/lib/nav";
-import { BOOKING_HREF } from "@/lib/site";
+import { BOOKING_HREF, PORTAL_HREF } from "@/lib/site";
 
 /** Transparent over the hero, turns solid cream once the page scrolls. */
 export default function Header() {
@@ -25,7 +25,7 @@ export default function Header() {
         solid ? "bg-background/95 shadow-[0_1px_0_rgb(var(--border))] backdrop-blur" : "bg-transparent"
       }`}
     >
-      <div className="container-x flex h-20 items-center justify-between gap-6">
+      <div className="container-x flex h-20 items-center sm:h-24 justify-between gap-6">
         <Logo light={!solid} />
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -44,7 +44,15 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href={BOOKING_HREF} className="btn-primary !px-5 !py-2.5">
+          <a
+            href={PORTAL_HREF}
+            target="_blank"
+            rel="noopener"
+            className={`hidden text-sm font-medium sm:inline ${solid ? "text-foreground/80 hover:text-accent" : "text-white/85 hover:text-white"}`}
+          >
+            Client Login
+          </a>
+          <a href={BOOKING_HREF} target="_blank" rel="noopener" className="btn-primary !px-5 !py-2.5">
             Book Now
           </a>
           <button
@@ -75,6 +83,9 @@ export default function Header() {
               {item.label}
             </a>
           ))}
+          <a href={PORTAL_HREF} target="_blank" rel="noopener" className="py-3.5 font-serif text-xl text-accent">
+            Client Login
+          </a>
         </nav>
       )}
     </header>

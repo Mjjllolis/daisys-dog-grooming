@@ -1,16 +1,18 @@
 /**
- * Placeholder imagery (Unsplash). Every photo on the site is referenced from
- * here, so swapping in Daisy's own photos is a one-file change.
+ * Every photo on the site is referenced from here. Dog photos are Daisy's own
+ * (from the Groomore booking page banner); groomer.jpg is the Facebook profile photo.
  */
-const u = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1800&q=80`;
+export const DOGS = [
+  { src: "/images/pomeranian.jpg", alt: "Fluffy Pomeranian after a full groom at Daisy's", name: "Pomeranian" },
+  { src: "/images/doodle-cream.jpg", alt: "Cream doodle with a fresh teddy-bear cut", name: "Doodle" },
+  { src: "/images/schnauzer.jpg", alt: "Miniature Schnauzer with a classic schnauzer trim", name: "Schnauzer" },
+  { src: "/images/doodle-red.jpg", alt: "Red doodle freshly groomed on the table", name: "Red doodle" },
+  { src: "/images/yorkie.jpg", alt: "Yorkie with a tidy puppy cut", name: "Yorkie" },
+  { src: "/images/maltese.jpg", alt: "Little white pup with a short summer cut", name: "Maltese mix" },
+];
 
 export const IMAGES = {
-  heroSlides: [
-    { src: u("1581888227599-779811939961"), alt: "Freshly groomed dog relaxing in a soft bed" },
-    { src: u("1596492784531-6e6eb5ea9993"), alt: "Fluffy white Samoyed after a spa bath" },
-    { src: u("1534361960057-19889db9621e"), alt: "Fluffy white dog bounding across the grass" },
-  ],
-  about: { src: u("1516734212186-a967f81ad0d7"), alt: "Groomer gently brushing a golden retriever" },
-  services: { src: u("1633722715463-d30f4f325e24"), alt: "Happy golden retriever after a full groom" },
-  offer: { src: u("1507146426996-ef05306b995a"), alt: "Golden puppy ready for a first groom" },
+  heroSlides: [DOGS[0], DOGS[1], DOGS[3], DOGS[2]],
+  about: { src: "/images/groomer.jpg", alt: "Your groomer at Daisy's Dog Grooming" },
+  services: DOGS[4],
 };

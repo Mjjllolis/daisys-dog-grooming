@@ -1,22 +1,22 @@
 export const FAQS = [
   {
     q: "How is the final price decided?",
-    a: "Starting prices cover average coats. Matting, heavy shedding or very large breeds may add to the price, and we always confirm with you before we begin.",
+    a: "Our prices are starting prices by weight. Coat length, condition and matting can change the final cost — we'll always talk it through with you first.",
   },
   {
     q: "How long does a groom take?",
-    a: "Most grooms take 2–3 hours depending on size and coat. We'll text you when your pup is ready — no long kennel waits.",
+    a: "Baths take about 1–2 hours and full grooms about 2–4½ hours depending on size. Because we groom one-on-one, your pup isn't waiting around in a kennel.",
   },
   {
-    q: "Do you offer memberships or packages?",
-    a: "Yes — book a recurring groom every 4–6 weeks and save 10% on every visit.",
+    q: "How do I book?",
+    a: "Book online 24/7 through our booking page, or give us a call at (225) 508-9814.",
   },
   {
-    q: "What is your cancellation policy?",
-    a: "Please give us 24 hours' notice so we can offer the spot to another pup. Late cancellations may incur a small fee.",
+    q: "Can I manage my appointments online?",
+    a: "Yes — log in to the client portal to view and manage your upcoming appointments.",
   },
   {
-    q: "Which payment methods do you accept?",
-    a: "All major cards, Apple Pay, Google Pay and cash.",
+    q: "Where are you located?",
+    a: "3747 Quarter Horse Ln in Addis, LA — just across the river from Baton Rouge.",
   },
 ];

@@ -1,13 +1,18 @@
-import { SITE_SHORT_NAME } from "@/lib/site";
+import Image from "next/image";
+import { SITE_NAME } from "@/lib/site";
 
-export default function Logo({ light = false }: { light?: boolean }) {
+/** Daisy's own logo (schnauzer line drawing + script), cut out from the Groomore avatar. */
+export default function Logo({ light = false, className = "h-12 w-auto sm:h-14" }: { light?: boolean; className?: string }) {
   return (
-    <a href="#top" className={`group flex items-baseline gap-1.5 font-serif ${light ? "text-white" : "text-foreground"}`}>
-      <span className="text-2xl font-medium tracking-tight sm:text-[28px]">{SITE_SHORT_NAME}</span>
-      <span className="text-2xl italic text-accent sm:text-[28px]">✿</span>
-      <span className={`hidden text-[10px] font-sans font-semibold uppercase tracking-[0.25em] sm:inline ${light ? "text-white/70" : "text-muted"}`}>
-        Dog Grooming
-      </span>
+    <a href="#top" className="flex items-center" aria-label={`${SITE_NAME} — home`}>
+      <Image
+        src={light ? "/logo-light.png" : "/logo-dark.png"}
+        alt={SITE_NAME}
+        width={900}
+        height={383}
+        priority
+        className={className}
+      />
     </a>
   );
 }

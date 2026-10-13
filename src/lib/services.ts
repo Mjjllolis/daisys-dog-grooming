@@ -1,25 +1,27 @@
+/** Services + prices, verbatim from Daisy's Groomore booking page. */
+
 export const TICKER = [
-  "Spa Baths",
-  "Breed-Specific Cuts",
-  "Natural Shampoos",
-  "Happy Tails",
-  "Gentle Grooming",
-  "Fear-Free Handling",
-  "Puppy Intros",
+  "One-on-One Grooming",
+  "Full Grooms",
+  "Baths & Nails",
+  "Hand Scissoring",
+  "Heart Tails",
+  "Bows & Bandanas",
+  "Low-Stress Handling",
 ];
 
 export const ABOUT_POINTS = [
-  "Certified, pet-first groomers",
-  "Fear-free, low-stress handling",
-  "Gentle, pet-safe products",
-  "One-on-one attention, never cages",
+  "One-on-one grooming, start to finish",
+  "Quiet, low-stress environment",
+  "Comfort, safety and quality care first",
+  "Every furry client treated like family",
 ];
 
 export const SERVICE_POINTS = [
-  "Bath, blow-dry & brush-out",
-  "Breed-standard or custom haircut",
-  "Ear cleaning & nail trim",
-  "Finishing spritz & bandana",
+  "Bath & nails on every visit",
+  "Full haircut tailored to your pup",
+  "Hand scissoring for longer styles",
+  "Finishing touches: heart tails & bows",
 ];
 
 export type Package = {
@@ -32,29 +34,40 @@ export type Package = {
 
 export const PACKAGES: Package[] = [
   {
-    name: "Bath & Brush",
-    blurb: "A fresh, fluffy refresh",
+    name: "Bath",
+    blurb: "A fresh, clean refresh",
     from: 45,
-    features: ["Shampoo & conditioner", "Blow-dry & brush-out", "Ear cleaning", "Nail trim"],
+    features: ["Bath & dry", "Nail trim", "1 – 2 hours", "Priced by weight"],
   },
   {
     name: "Full Groom",
-    blurb: "Our most popular service",
-    from: 85,
+    blurb: "Our signature service",
+    from: 65,
     featured: true,
-    features: ["Everything in Bath & Brush", "Haircut or breed trim", "Sanitary & paw trim", "Finishing spritz & bandana"],
+    features: ["Bath & dry", "Nail trim", "Full haircut", "2 – 4½ hours"],
   },
   {
-    name: "Spa Day",
-    blurb: "The ultimate pamper",
-    from: 120,
-    features: ["Everything in Full Groom", "Blueberry facial", "Teeth brushing", "Paw pad balm & massage"],
+    name: "Nail Trim",
+    blurb: "Quick in-and-out",
+    from: 20,
+    features: ["Nail trim only", "About 10 minutes", "Add a nail grind +$5", "Any size pup"],
   },
 ];
 
+/** Columns: Bath, Full Groom. `plus` = "starts at" pricing. */
 export const SIZE_PRICING = [
-  { size: "Small", weight: "Up to 20 lb", prices: [45, 85, 95] },
-  { size: "Medium", weight: "21 – 50 lb", prices: [55, 95, 120] },
-  { size: "Large", weight: "51 – 90 lb", prices: [70, 105, 145] },
-  { size: "Extra large", weight: "90 lb +", prices: [85, 130, 170] },
+  { size: "Small", weight: "0 – 20 lb", prices: [45, 65], plus: true },
+  { size: "Medium", weight: "21 – 45 lb", prices: [55, 85], plus: true },
+  { size: "Large", weight: "45 – 99 lb", prices: [70, 120], plus: true },
+  { size: "Extra large", weight: "100 lb +", prices: [85, 135], plus: false },
+];
+export const SIZE_COLUMNS = ["Bath", "Full Groom"];
+
+export const ADD_ONS = [
+  { name: "Hand scissoring", note: "For longer lengths", price: "from $10" },
+  { name: "Heart tail", price: "$5" },
+  { name: "Nail grind", note: "Smooths fresh-cut nails", price: "$5" },
+  { name: "Teeth brushing", price: "$5" },
+  { name: "Small bow", price: "$5" },
+  { name: "Big bow", price: "$7" },
 ];
